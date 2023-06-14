@@ -931,7 +931,7 @@ input[type=search]::-webkit-search-cancel-button {
 }
 @media (max-width: 860px) {
   .header .search__icon-mob {
-    display: block;
+    display: inline-block;
   }
 }
 .header .search input[type=submit] {

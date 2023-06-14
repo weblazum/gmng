@@ -194,7 +194,7 @@
 		&__icon-mob {
 			display: none;
 			@include media(phone-bg) {
-				display: block;
+				display: inline-block;
 			}
 		}
 		input[type="submit"] {
