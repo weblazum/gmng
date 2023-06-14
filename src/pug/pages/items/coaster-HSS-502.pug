@@ -1,0 +1,100 @@
+extends ../../base
+
+block vars
+	-let pageName = 'item-page'
+	-let pageTitle = 'Подставка GMNG HSS-502'
+	-let catalogGroup = 'coasters'
+	-let catalogGroupRu = 'Подставки под наушники'
+	-let itemID = '1521029'
+	-let galleryItemsCount = 23
+	-let metaTitle = 'Подставка GMNG HSS-502'
+	-let metaDescription= 'Подставка GMNG HSS-502'
+block content
+		include ../../block/group-list
+		include ../../includes/items-list
+		include ../../includes/reviews-list
+		main.main
+			section.item
+				.container.item__container
+					+breadcrumbs(3, 'Товары', 'catalog', `${catalogGroupRu}`, 'catalog/' + `${catalogGroup}`)
+					.item__inner
+						.item__images.gallery
+							if galleryItemsCount != 0
+								.gallery__container
+									.gallery__main.swiper
+										ul.gallery__list.swiper-wrapper
+											- for(let i = 0; i < galleryItemsCount; i++)
+												li.gallery__item.swiper-slide
+													a.gallery__link(href='/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.jpg' data-fancybox='items-gallery') 
+														picture.gallery__image
+															source(type='image/webp' srcset= '/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.webp')
+															source(type='image/jpeg' srcset= '/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.jpg')
+															img(src='/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.jpg', alt= pageTitle + '_' + (i + 1))
+									.swiper-pagination.gallery-pagination
+							if galleryItemsCount > 1
+								.gallery__container
+									.gallery__thumb.swiper
+											ul.gallery__list.swiper-wrapper
+												- for(let i = 0; i < galleryItemsCount; i++)
+													li.gallery__item.swiper-slide
+														picture.gallery__image
+															source(type='image/webp' srcset= '/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.webp')
+															source(type='image/jpeg' srcset= '/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.jpg')
+															img(src='/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.jpg', alt= pageTitle + '_' + (i + 1))
+									.gallery__buttons
+										.gallery-button-prev.swiper-button-prev
+										.gallery-button-next.swiper-button-next
+						.item__content
+							span.item__id id #{itemID}
+							h1.item__title.h4= pageTitle
+							each element in itemsList
+								if element.id === itemID
+									p.item__description= element.description
+							span.item__tagline.h4 «Нравится – играй»
+							.item__downloads.downloads
+								each element in itemsList
+									if element.id === itemID & element.downloads === true 
+										p.downloads__title Загрузки
+										if element.manualLink != null
+											.downloads__item
+												p.downloads__type.h4 Руководство пользователя
+												a.downloads__link(href= element.manualLink, target="_blank")= element.manualSize
+													include ../../../img/download.svg
+										if element.driverLink != null
+											.downloads__item
+												p.downloads__type.h4 Драйвер
+												a.downloads__link(href= element.driverLink)= element.driverSize
+													include ../../../img/download.svg
+							.item__buy.buy
+								p.buy__title Купить
+								.buy__links
+									a.buy__link(href="https://www.citilink.ru/search/?text=" + itemID, target="_blank")
+										include ../../../img/logo-citilink.svg
+									a.buy__link(href="https://market.yandex.ru/search?text=" + pageTitle, target="_blank")
+										include ../../../img/logo-yamarket.svg
+			section.features
+				.container.features__container
+					.features__tabs.tabs
+						each element in itemsList
+							if element.id === itemID & element.features === true 
+								a(href="#tab-1").tab-trigger.h3 Характеристики
+							if element.id === itemID & element.reviews === true 
+								a(href="#tab-2").tab-trigger.h3 Обзоры
+					each element in itemsList
+						if element.id === itemID & element.features === true 
+							.features__table.tab-block#tab-1
+						if element.id === itemID & element.reviews === true 
+							.features__reviews.reviews.tab-block#tab-2
+								ul.reviews__list
+									each element in reviewsList
+										if element.id === itemID
+											li.reviews__item(class= element.group)
+												a.reviews__link(href= element.link) 
+													.reviews__image
+														img(src= element.image, alt= element.title)
+													span= element.title
+			section.products.products-also
+				.products__container.container
+					h2.products__title.h3 Смотрите также
+					.products__content
+						include ../../block/products-also

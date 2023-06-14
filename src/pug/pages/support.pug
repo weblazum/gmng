@@ -1,0 +1,36 @@
+extends ../base
+
+block vars
+	-let pageName = 'support-page'
+	-let pageTitle = 'Поддержка'
+	-let metaTitle = 'Поддержка | GMNG'
+	-let metaDescription = 'Напиши нам, мы все решим!'
+block content
+		main.main 
+			section.support
+				.support__container.container
+					+breadcrumbs
+					.support__content
+						.support__top
+							h1.support__title.h3 Поддержка
+							p Возможно, что-то сломалось или&nbsp;появились вопросы? Keep calm and let mem handle it. Шутим) Напиши нам, мы все решим! Заполни заявку в&nbsp;любое время дня и&nbsp;ночи &ndash;&nbsp;и&nbsp;команда технической поддержки GMNG поможет тебе в&nbsp;рабочие часы.
+						.support__search
+							.support__block
+								h2.support__subtitle.h4 База знаний
+								p.support__text Найдите статьи по&nbsp;поддержке продукта
+								form.support__form
+									label(for="").text-small Поиск по&nbsp;ключевому слову, теме или&nbsp;модели
+									input(type="search")
+									input(type="submit" value="Найти").btn-base
+							.support__block
+								h2.support__subtitle.h4 Определить продукт по&nbsp;серийному номеру
+								form.support__form
+									label(for="").text-small Введите серийный номер продукта в&nbsp;поле поиска
+									input(type="search")
+									input(type="submit" value="Найти").btn-base
+							.support__block
+								h2.support__subtitle.h4 Оформить заявку в&nbsp;Службу поддержки
+								p.support__text Выберите продукт, по&nbsp;которому необходимо получить поддержку
+								.support__buttons
+									button.btn-transparent По&nbsp;серийному номеру
+									button.btn-transparent Выбрать из&nbsp;списка

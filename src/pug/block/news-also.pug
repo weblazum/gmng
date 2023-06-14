@@ -1,0 +1,12 @@
+.news__sidebar.sidebar
+	h2.h3.sidebar__title Смотреть другие новости
+	ul.sidebar__list
+		each element in newsList.slice(0, 4)
+			if element.id === newsID
+
+			else
+				li.sidebar__item 
+					span.sidebar__date= element.date
+					h2.sidebar__link.h4
+						a(href= element.link)= element.title
+					p.sidebar__announce= element.announce

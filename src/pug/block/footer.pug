@@ -1,0 +1,34 @@
+footer.footer
+	.footer__row
+		.footer__container.container
+			if pageName === "main-page"
+				.footer__logo.logo
+					include ../../img/logo.svg
+			else
+				a.footer__logo.logo(href="/dist/index.html")
+					include ../../img/logo.svg
+			nav.footer__nav.nav
+				ul.nav__list
+					li.nav__item
+						a.nav__link(href="/dist/catalog.html") Товары
+					li.nav__item
+						a.nav__link(href="/dist/reviews.html") Обзоры
+					li.nav__item
+						a.nav__link(href="/dist/contacts.html") Контакты
+					li.nav__item
+						a.nav__link(href="/dist/about.html") О&nbsp;бренде
+					li.nav__item
+						a.nav__link(href="/dist/utilities.html") Утилиты
+					li.nav__item
+						a.nav__link(href="/dist/news.html") Пресс-центр
+			h2.slogan Нравится &ndash;&nbsp;играй
+	.footer__row
+		.footer__container.container
+			.social
+				a(href="https://vk.com/gmng_official" target="_blank") 
+					include ../../img/vk.svg
+				a(href="https://www.youtube.com/channel/UCqEe_dU1T3eN876_ATCNSSg" target="_blank") 
+					include ../../img/youtube.svg
+				a(href="https://vk.com/gmng_official" target="_blank") Подпишись на&nbsp;нас
+			.copy
+				| © 2005-2023, GMNG. <nobr>Все права защищены</nobr>

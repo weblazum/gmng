@@ -1,0 +1,177 @@
+extends ../../base
+
+block vars
+	-let pageName = 'item-page'
+	-let pageTitle = 'Мышь GMNG 980GMW'
+	-let catalogGroup = 'mouses'
+	-let catalogGroupRu = 'Игровые мыши'
+	-let itemID = '1533166'
+	-let galleryItemsCount = 13
+	-let metaTitle = 'Мышь GMNG 980GMW'
+	-let metaDescription= 'Встроенный Li-Ion аккумулятор на 500mAh, время зарядки 3 часа, работы до 40 часов, удлинитель-передатчик'
+block content
+		include ../../block/group-list
+		include ../../includes/items-list
+		include ../../includes/reviews-list
+		-
+			let specMain = {
+				'Технология': 'оптическая',
+				'Разрешение сенсора, макс.': '10000 dpi',
+				'Тип соединения мыши': 'беспроводная',
+				'Интерфейс подключения': 'USB',
+				'Для геймеров': '',
+				'Для ноутбуков': '',
+				'Количество кнопок': '7',
+				'Колесо прокрутки': '',
+				'Длина провода': '1.8 м',
+				'Радиус действия мыши': '10 м',
+				'Подключение по USB': '',
+				'Поддержка разрешений': '100/1600/3200/5000/10000 dpi',
+				'Возможность работы на покрытиях': 'на любой поверхности',
+				'Тип поставки': 'Ret',
+			};
+		-
+			let specPower = {
+				'Питание от': 'Li-Ion аккумулятор',
+				'Индикация заряда батарей': '',
+			};
+		-
+			let specEquipment = {
+				'Комплект поставки': 'Игровая беспроводная компьютерная мышь 980GMW',
+			};
+		-
+			let specFrame = {
+				'Дизайн': 'для правой руки',
+				'Специальное покрытие корпуса': 'soft touch',
+				'Цвет оформления': 'черный',
+				'Размеры мыши': '72.66x129.97x43.29мм',
+				'Вес (мыши)': '120 грамм',
+			};
+		-
+			let specFeatures = {
+				'Количество программируемых клавиш': '7',
+				'Максимальная скорость': '2.54 метр/сек',
+				'Изменение чувствительности сенсора кнопкой': '',
+				'Максимальное ускорение': '20 G',
+			};
+		main.main
+			section.item
+				.container.item__container
+					+breadcrumbs(3, 'Товары', 'catalog', `${catalogGroupRu}`, 'catalog/' + `${catalogGroup}`)
+					.item__inner
+						.item__images.gallery
+							if galleryItemsCount != 0
+								.gallery__container
+									.gallery__main.swiper
+										ul.gallery__list.swiper-wrapper
+											- for(let i = 0; i < galleryItemsCount; i++)
+												li.gallery__item.swiper-slide
+													a.gallery__link(href='/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.jpg' data-fancybox='items-gallery') 
+														picture.gallery__image
+															source(type='image/webp' srcset= '/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.webp')
+															source(type='image/jpeg' srcset= '/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.jpg')
+															img(src='/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.jpg', alt= pageTitle + '_' + (i + 1))
+									.swiper-pagination.gallery-pagination
+							if galleryItemsCount > 1
+								.gallery__container
+									.gallery__thumb.swiper
+											ul.gallery__list.swiper-wrapper
+												- for(let i = 0; i < galleryItemsCount; i++)
+													li.gallery__item.swiper-slide
+														picture.gallery__image
+															source(type='image/webp' srcset= '/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.webp')
+															source(type='image/jpeg' srcset= '/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.jpg')
+															img(src='/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.jpg', alt= pageTitle + '_' + (i + 1))
+									.gallery__buttons
+										.gallery-button-prev.swiper-button-prev
+										.gallery-button-next.swiper-button-next
+
+						.item__content
+							span.item__id id #{itemID}
+							h1.item__title.h4= pageTitle
+							each element in itemsList
+								if element.id === itemID
+									p.item__description= element.description
+							span.item__tagline.h4 «Нравится – играй»
+							.item__downloads.downloads
+								each element in itemsList
+									if element.id === itemID & element.downloads === true 
+										p.downloads__title Загрузки
+										if element.manualLink != null
+											.downloads__item
+												p.downloads__type.h4 Руководство пользователя
+												a.downloads__link(href= element.manualLink, target="_blank")= element.manualSize
+													include ../../../img/download.svg
+										if element.driverLink != null
+											.downloads__item
+												p.downloads__type.h4 Драйвер
+												a.downloads__link(href= element.driverLink)= element.driverSize
+													include ../../../img/download.svg
+							.item__buy.buy
+								p.buy__title Купить
+								.buy__links
+									a.buy__link(href="https://www.citilink.ru/search/?text=" + itemID, target="_blank")
+										include ../../../img/logo-citilink.svg
+									a.buy__link(href="https://market.yandex.ru/search?text=" + pageTitle, target="_blank")
+										include ../../../img/logo-yamarket.svg
+			section.features
+				.container.features__container
+					.features__tabs.tabs
+						each element in itemsList
+							if element.id === itemID & element.features === true 
+								a(href="#tab-1").tab-trigger.h3 Характеристики
+							if element.id === itemID & element.reviews === true 
+								a(href="#tab-2").tab-trigger.h3 Обзоры
+					each element in itemsList
+						if element.id === itemID & element.features === true 
+							.features__table.tab-block#tab-1
+								.features__block
+									.features__title.h4 Основные характеристики
+									.features__specs
+										each value, property in specMain
+											.features__inner
+												.features__property= property
+												.features__value= value
+								.features__block
+									.features__title.h4 Питание
+									.features__specs
+										each value, property in specPower
+											.features__inner
+												.features__property= property
+												.features__value= value
+								.features__block
+									.features__title.h4 Комплектация
+									.features__specs
+										each value, property in specEquipment
+											.features__inner
+												.features__property= property
+												.features__value= value
+								.features__block
+									.features__title.h4 Корпус
+									.features__specs
+										each value, property in specFrame
+											.features__inner
+												.features__property= property
+												.features__value= value
+								.features__block
+									.features__title.h4 Особенности
+									.features__specs
+										each value, property in specFeatures
+											.features__inner
+												.features__property= property
+												.features__value= value
+						if element.id === itemID & element.reviews === true 
+							.features__reviews.reviews.tab-block#tab-2
+								ul.reviews__list
+									each element in reviewsList
+										if element.id === itemID
+											li.reviews__item(class= element.group)
+												a.reviews__link(href= element.link) 
+													.reviews__image
+														img(src= element.image, alt= element.title)
+													span= element.title
+			section.products 
+				.products__container.container
+					h2.products__title.h3 Смотрите также
+					.products__content
+						include ../../block/products-also

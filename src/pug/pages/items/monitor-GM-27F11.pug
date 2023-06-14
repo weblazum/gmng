@@ -1,0 +1,181 @@
+extends ../../base
+
+block vars
+	-let pageName = 'item-page'
+	-let pageTitle = 'Монитор GMNG 27" Gaming GM-27F11'
+	-let catalogGroup = 'monitors'
+	-let catalogGroupRu = 'Игровые мониторы'
+	-let itemID = '1895988'
+	-let galleryItemsCount = 15
+	-let metaTitle = 'Монитор GMNG 27" Gaming GM-27F11'
+	-let metaDescription= 'Почувствуй увлекательное погружение в гейминг с исключительным комфортом'
+block content
+		include ../../block/group-list
+		include ../../includes/items-list
+		include ../../includes/reviews-list
+		-
+			let specMain = {
+				'Диагональ экрана': '27" (68.6см)',
+				'Тип матрицы': 'VA',
+				'Соотношение сторон экрана': '16:9',
+				'Разрешение': '2560x1440',
+				'Углы обзора': '178/178',
+				'Время отклика': '1 мс',
+				'Яркость экрана': '300 кд/м2',
+				'Поверхность экрана': 'матовая',
+				'Светодиодная подсветка ЖК-панели': '',
+				'Частота обновления': '165 Гц',
+				'Статическая контрастность к 1': '4000',
+				'Динамическая контрастность к 1': '1000000',
+			};
+		-
+			let specInterface = {
+				'Разъем HDMI': '',
+				'Количество разъемов HDMI': '2',
+				'Версия разъемов HDMI': '2.1',
+				'Разъем Display Port': '',
+				'Количество разъемов DisplayPort': '2 шт',
+				'Выход на наушники': '',
+				'Разъем подключения наушников': '3.5 мм',
+			};
+		-
+			let specPower = {
+				'Тип блока питания': 'внутренний',
+				'Энергопотребление': '45 Вт',
+				'Энергопотребление в режиме ожидания': '0.5 Вт',
+			};
+		-
+			let specFrame = {
+				'Цвет подставки': 'черный',
+				'Цвет рамки': 'черный',
+				'Размеры с подставкой': '616.4x571.6x373.9мм',
+				'Покрытие корпуса': 'матовое',
+				'Вес товара': '6.63 кг',
+				'Вес (без подставки)': '4.79 кг',
+				'Размер крепления VESA': '100х100',
+			};
+		-
+			let specFeatures = {
+				'Поддержка NVIDIA G-Sync': '',
+				'Поддержка AMD FreeSync': '',
+			};
+		main.main
+			section.item
+				.container.item__container
+					+breadcrumbs(3, 'Товары', 'catalog', `${catalogGroupRu}`, 'catalog/' + `${catalogGroup}`)
+					.item__inner
+						.item__images.gallery
+							if galleryItemsCount != 0
+								.gallery__container
+									.gallery__main.swiper
+										ul.gallery__list.swiper-wrapper
+											- for(let i = 0; i < galleryItemsCount; i++)
+												li.gallery__item.swiper-slide
+													a.gallery__link(href='/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.jpg' data-fancybox='items-gallery') 
+														picture.gallery__image
+															source(type='image/webp' srcset= '/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.webp')
+															source(type='image/jpeg' srcset= '/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.jpg')
+															img(src='/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.jpg', alt= pageTitle + '_' + (i + 1))
+									.swiper-pagination.gallery-pagination
+							if galleryItemsCount > 1
+								.gallery__container
+									.gallery__thumb.swiper
+											ul.gallery__list.swiper-wrapper
+												- for(let i = 0; i < galleryItemsCount; i++)
+													li.gallery__item.swiper-slide
+														picture.gallery__image
+															source(type='image/webp' srcset= '/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.webp')
+															source(type='image/jpeg' srcset= '/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.jpg')
+															img(src='/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.jpg', alt= pageTitle + '_' + (i + 1))
+									.gallery__buttons
+										.gallery-button-prev.swiper-button-prev
+										.gallery-button-next.swiper-button-next
+						.item__content
+							span.item__id id #{itemID}
+							h1.item__title.h4= pageTitle
+							each element in itemsList
+								if element.id === itemID
+									p.item__description= element.description
+							span.item__tagline.h4 «Нравится – играй»
+							.item__downloads.downloads
+								each element in itemsList
+									if element.id === itemID & element.downloads === true 
+										p.downloads__title Загрузки
+										if element.manualLink != null
+											.downloads__item
+												p.downloads__type.h4 Руководство пользователя
+												a.downloads__link(href= element.manualLink, target="_blank")= element.manualSize
+													include ../../../img/download.svg
+										if element.driverLink != null
+											.downloads__item
+												p.downloads__type.h4 Драйвер
+												a.downloads__link(href= element.driverLink)= element.driverSize
+													include ../../../img/download.svg
+							.item__buy.buy
+								p.buy__title Купить
+								.buy__links
+									a.buy__link(href="https://www.citilink.ru/search/?text=" + itemID, target="_blank")
+										include ../../../img/logo-citilink.svg
+									a.buy__link(href="https://market.yandex.ru/search?text=" + pageTitle, target="_blank")
+										include ../../../img/logo-yamarket.svg
+			section.features
+				.container.features__container
+					.features__tabs.tabs
+						each element in itemsList
+							if element.id === itemID & element.features === true 
+								a(href="#tab-1").tab-trigger.h3 Характеристики
+							if element.id === itemID & element.reviews === true 
+								a(href="#tab-2").tab-trigger.h3 Обзоры
+					each element in itemsList
+						if element.id === itemID & element.features === true 
+							.features__table.tab-block#tab-1
+								.features__block
+									.features__title.h4 Основные характеристики
+									.features__specs
+										each value, property in specMain
+											.features__inner
+												.features__property= property
+												.features__value= value
+								.features__block
+									.features__title.h4 Разъемы и интерфейсы
+									.features__specs
+										each value, property in specInterface
+											.features__inner
+												.features__property= property
+												.features__value= value
+								.features__block
+									.features__title.h4 Питание
+									.features__specs
+										each value, property in specPower
+											.features__inner
+												.features__property= property
+												.features__value= value
+								.features__block
+									.features__title.h4 Корпус
+									.features__specs
+										each value, property in specFrame
+											.features__inner
+												.features__property= property
+												.features__value= value
+								.features__block
+									.features__title.h4 Особенности
+									.features__specs
+										each value, property in specFeatures
+											.features__inner
+												.features__property= property
+												.features__value= value
+						if element.id === itemID & element.reviews === true 
+							.features__reviews.reviews.tab-block#tab-2
+								ul.reviews__list
+									each element in reviewsList
+										if element.id === itemID
+											li.reviews__item(class= element.group)
+												a.reviews__link(href= element.link) 
+													.reviews__image
+														img(src= element.image, alt= element.title)
+													span= element.title
+			section.products 
+				.products__container.container
+					h2.products__title.h3 Смотрите также
+					.products__content
+						include ../../block/products-also

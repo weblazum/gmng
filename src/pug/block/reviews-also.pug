@@ -1,0 +1,13 @@
+section.also
+	.also__container.container
+		h2.also__title.h3 Смотреть другие обзоры
+		ul.also__list
+			each element in reviewsList.slice(0, 9)
+				if element.id === itemID
+
+				else
+					li.also__item(class= element.group)
+						a.also__link(href= element.link) 
+							.also__image
+								img(src= element.image, alt= element.title)
+							span= element.title

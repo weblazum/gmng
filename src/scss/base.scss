@@ -1,0 +1,261 @@
+html,
+body {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	min-width: 320px;
+	overflow-x: hidden;
+	background-color: $color-white;
+	font-family: $font-family-base;
+	font-weight: $font-weight-base;
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+	font-style: normal;
+	color: $color-black;
+	@include media(phone-bg) {
+		@include font(16px, 22px);
+	}
+}
+
+h1,
+.h1 {
+	@include font(60px, 64px, 600);
+	@include media(phone-bg) {
+		@include font(30px, 38px, 600);
+	}
+}
+
+h2,
+.h2 {
+	@include font(48px, 54px, 600);
+	@include media(phone-bg) {
+		@include font(26px, 32px, 600);
+	}
+}
+
+h3,
+.h3 {
+	@include font(36px, 42px, 600);
+	@include media(phone-bg) {
+		@include font(22px, 26px, 600);
+	}
+}
+
+h4,
+.h4 {
+	@include font(22px, 26px, 600);
+	@include media(phone-bg) {
+		@include font(18px, 22px, 600);
+	}
+}
+
+a {
+	&:hover {
+		color: $color-dark-cyan;
+	}
+	&:focus {
+		color: $color-dark-cyan;
+	}
+}
+
+.link {
+	&:hover {
+		text-decoration: underline;
+	}
+	&:focus {
+		text-decoration: underline;
+	}
+}
+
+img {
+	max-width: 100%;
+}
+a:focus,
+a:active,
+a:visited {
+	outline: none;
+	border: none;
+}
+
+button {
+	font-family: $font-family-base;
+	font-size: $font-size-base;
+	font-weight: $font-weight-base;
+}
+
+input {
+	background: transparent;
+	line-height: inherit;
+	font-family: $font-family-base;
+	font-size: $font-size-base;
+	font-weight: $font-weight-base;
+}
+
+input[type="submit"] {
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+input[type="number"],
+input[type="number"]:hover,
+input[type="number"]:focus {
+	appearance: none;
+	-moz-appearance: textfield;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+}
+
+::selection {
+	background: #a8fffa;
+}
+
+.small-text {
+	@include font(14px, 18px);
+}
+
+.btn-base {
+	display: inline-block;
+	background: $color-dark-cyan;
+	color: $color-white;
+	padding: 14px 32px;
+	max-width: 340px;
+	cursor: pointer;
+	&:hover,
+	&:focus {
+		background: darken($color: $color-dark-cyan, $amount: 5);
+		text-decoration: none;
+		color: $color-white;
+	}
+}
+
+.btn-transparent {
+	display: inline-block;
+	background: transparent;
+	border: 2px solid $color-dark-cyan;
+	color: $color-dark-cyan;
+	padding: 14px 32px;
+	max-width: 340px;
+	cursor: pointer;
+	&:hover,
+	&:focus {
+		background: $color-dark-cyan;
+		color: $color-white;
+	}
+}
+
+.btn-link {
+	display: inline-block;
+	@include font(22px, 26px, 500);
+	padding: 0 0 12px;
+	border-bottom: 1px solid $color-black;
+	cursor: pointer;
+	@include media(phone-bg) {
+		@include font(18px, 22px, 500);
+	}
+	&:hover,
+	&:focus {
+		color: $color-black;
+		text-decoration: none;
+		border-bottom: 1px solid $color-dark-cyan;
+		svg path {
+			fill: $color-dark-cyan;
+		}
+	}
+	svg {
+		margin: 0 0 0 46px;
+	}
+	&--white {
+		color: $color-white;
+		border-bottom: 1px solid $color-white;
+		svg path {
+			fill: $color-white;
+		}
+		&:hover {
+			color: $color-white;
+			border-bottom: 1px solid $color-dark-cyan;
+			svg path {
+				fill: $color-dark-cyan;
+			}
+		}
+		&:focus {
+			color: $color-dark-cyan;
+		}
+	}
+}
+
+.lock {
+	overflow: hidden;
+	@include media(phone-bg) {
+		overflow: auto;
+	}
+}
+
+.overlay {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 2;
+	visibility: hidden;
+	opacity: 0;
+}
+.overlay.visible {
+	visibility: visible;
+	opacity: 1;
+}
+.wrapper {
+	max-width: 1900px;
+	margin: 0 auto;
+	overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	position: relative;
+}
+
+.container {
+	max-width: calc($frame-width-base + $frame-padding-base * 2);
+	padding: 0 $frame-padding-base;
+	margin: 0 auto;
+	@include media(phone-bg) {
+		padding: 0 26px;
+	}
+	@include media(phone-sm) {
+		padding: 0 16px;
+	}
+}
+
+.main {
+	flex-grow: 1;
+}
+
+.text-large {
+	@include font(22px, 26px, 400);
+	@include media(phone-bg) {
+		@include font(16px, 22px, 400);
+	}
+}
+
+.text-small {
+	@include font(14px, 18px, 400);
+}
+
+.hidden-header {
+	display: none;
+	visibility: hidden;
+	opacity: 0;
+}

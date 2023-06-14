@@ -1,0 +1,32 @@
+.not-found-page {
+	.not-found {
+		background: url("/dist/img/background-06.jpg") center / cover no-repeat;
+		min-height: calc(100vh + 98px);
+		margin: -98px 0 0;
+		padding: calc(98px + 145px) 0 160px;
+		@include media(phone-bg) {
+			padding: calc(98px + 78px) 0;
+		}
+	}
+	.not-found__content {
+		max-width: 464px;
+		margin: 0 auto 0 0;
+	}
+	.not-found__title {
+		@include font(160px, 190px, 500);
+		@include media(phone-bg) {
+			@include font(90px, 110px, 500);
+		}
+	}
+	.not-found__subtitle {
+		margin: 0 0 40px;
+	}
+	.not-found__links {
+		display: flex;
+		gap: 80px;
+		flex-wrap: wrap;
+		@include media(phone-bg) {
+			gap: 30px;
+		}
+	}
+}

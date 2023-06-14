@@ -1,0 +1,63 @@
+.support-page {
+	.support {
+		padding: 40px 0 180px;
+		@include media(phone-bg) {
+			padding: 30px 0 88px;
+		}
+	}
+	.support__content {
+		max-width: 906px;
+	}
+	.support__title {
+		margin: 0 0 30px;
+	}
+	.support__top {
+		margin: 0 0 40px;
+	}
+	.support__block {
+		margin: 0 0 30px;
+	}
+	.support__subtitle {
+		margin: 0 0 10px;
+	}
+	.support__text {
+		margin: 0 0 20px;
+	}
+	.support__form {
+		display: flex;
+		position: relative;
+		padding: 26px 0 0;
+		@include media(phone-sm) {
+			flex-direction: column;
+			gap: 20px;
+		}
+	}
+	.support__form label {
+		position: absolute;
+		top: 0;
+		left: 0;
+		color: $color-grey;
+	}
+	.support__form input[type="search"] {
+		max-width: 636px;
+		width: 100%;
+		height: 50px;
+		border: 1px solid $color-grey;
+		padding: 16px 12px;
+		margin: 0 24px 0 0;
+		@include media(phone-md) {
+			max-width: 340px;
+		}
+	}
+	.support__form input[type="search"]:focus {
+		border: 1px solid $color-dark-cyan;
+		outline: 1px solid $color-dark-cyan;
+	}
+	.support__buttons {
+		display: flex;
+		gap: 20px;
+		@include media(phone-md) {
+			flex-direction: column;
+		}
+	}
+}

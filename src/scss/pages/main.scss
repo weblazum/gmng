@@ -1,0 +1,240 @@
+.main-page {
+	.top {
+		max-width: 1900px;
+		margin: -98px auto 0;
+		position: relative;
+		&__banner {
+			padding: 230px 0 230px;
+			height: 1000px;
+			@include media(phone-bg) {
+				padding: 180px 0 180px;
+				height: 720px;
+			}
+		}
+
+		&__header {
+			margin: 0 0 20px;
+		}
+		&__subheader {
+			margin: 0 0 40px;
+		}
+		.sticker {
+			position: absolute;
+			bottom: 40px;
+			right: 12%;
+			@include media(phone-bg) {
+				bottom: 30px;
+				right: auto;
+				left: 5%;
+			}
+		}
+
+		.swiper-pagination {
+			margin: 0;
+			display: flex;
+			gap: 8px;
+			justify-content: center;
+		}
+		.swiper-pagination-bullet {
+			background: transparent;
+			width: fit-content;
+			padding: 14px 6px;
+			transition: 0.5s;
+			cursor: pointer;
+			opacity: 1;
+			&:after {
+				content: "";
+				display: block;
+				width: 30px;
+				height: 2px;
+				border-radius: 2px;
+				background-color: $color-dark-grey;
+				margin: 0 !important;
+				opacity: 1;
+				transition: width 0.5s, height 0.5s, background-color 0.3s;
+			}
+			&-active {
+				&:after {
+					display: block;
+					background-color: $color-cyan;
+					width: 80px;
+					transition: width 0.5s, height 0.5s, background-color 0.3s;
+				}
+			}
+		}
+	}
+	.banner-01 {
+		background: url("/dist/img/banners/banner-01.webp") center / cover no-repeat;
+	}
+	.banner-02 {
+		background: url("/dist/img/banners/banner-02.webp") center / cover no-repeat;
+	}
+	.banner-03 {
+		background: url("/dist/img/banners/banner-03.webp") center / cover no-repeat;
+	}
+	.about {
+		padding: 180px 0 90px;
+		@include media(phone-bg) {
+			padding: 60px 0 35px;
+		}
+		&__container {
+			display: flex;
+			justify-content: space-between;
+			gap: 80px;
+			@include media(tablet) {
+				display: block;
+			}
+		}
+		&__experience {
+			flex: 0 1 330px;
+			color: $color-dark-cyan;
+			@include media(tablet) {
+				max-width: 430px;
+				margin: 0 0 30px;
+			}
+		}
+		&__work {
+			flex: 0 1 56%;
+			@include media(tablet) {
+				flex: 0 1 100%;
+			}
+		}
+		&__title {
+			margin: 0 0 57px;
+		}
+	}
+	.group {
+		padding: 90px 0;
+		@include media(phone-bg) {
+			padding: 35px 0 40px;
+		}
+	}
+	.culture {
+		padding: 90px 0;
+		@include media(phone-bg) {
+			padding: 40px 0 100px;
+		}
+		&__container {
+			display: flex;
+			justify-content: flex-end;
+		}
+		&__content {
+			flex: 0 1 56%;
+			@include media(tablet) {
+				flex: 0 1 100%;
+			}
+		}
+		&__inner {
+			max-width: 508px;
+		}
+		&__title {
+			margin: 0 0 30px;
+		}
+		&__text {
+			color: $color-dark-grey;
+		}
+	}
+	.utilities {
+		padding: 90px 0 90px;
+		background: url("/dist/img/background-01.webp") center / cover no-repeat;
+		text-align: center;
+		@include media(phone-bg) {
+			padding: 40px 0 66px;
+			background-image: url("/dist/img/background-01-mob.webp");
+		}
+		@include media(phone-sm) {
+		}
+		&__title {
+			margin: 0 auto 40px;
+			max-width: 732px;
+			@include media(phone-bg) {
+				max-width: 226px;
+				margin: 0 auto 24px 0;
+				text-align: left;
+			}
+		}
+		&__list {
+			display: flex;
+			justify-content: space-between;
+			margin: 0 0 143px;
+			gap: 40px;
+			@include media(tablet) {
+				justify-content: center;
+				margin: 0 0 20px;
+			}
+		}
+		&__item {
+			flex: 0 1 33.333%;
+			max-width: 354px;
+			text-align: center;
+			align-items: center;
+			@include media(tablet) {
+				&:nth-child(1) {
+					display: none;
+				}
+				&:nth-child(3) {
+					display: none;
+				}
+			}
+		}
+		&__image {
+			height: 700px;
+			display: flex;
+			align-items: flex-end;
+			justify-content: center;
+			@include media(tablet) {
+				height: initial;
+			}
+		}
+		&__image img {
+			max-height: 450px;
+			margin: 0 0 40px;
+			@include media(tablet) {
+				margin: 0;
+			}
+		}
+		&__text {
+			max-width: 216px;
+			margin: 0 auto;
+			@include media(tablet) {
+				display: none;
+			}
+		}
+		&__item_center img {
+			max-height: 660px;
+			@include media(tablet) {
+				max-height: 450px;
+			}
+		}
+		&__name {
+			margin: 0 0 16px;
+		}
+	}
+	.choice {
+		padding: 90px 0 90px;
+		background: url("/dist/img/background-02.webp") center / cover no-repeat, $color-black;
+		color: $color-white;
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		@include media(phone-bg) {
+			padding: 70px 0 318px;
+		}
+		@include media(phone-sm) {
+			background-image: url("/dist/img/background-02-mob.webp");
+		}
+		&__container {
+			width: 100%;
+		}
+		&__content {
+			max-width: 708px;
+			margin: 0 auto 0 0;
+		}
+		&__title {
+			margin: 0 0 20px;
+		}
+		&__subtitle {
+			margin: 0 0 35px;
+		}
+	}
+}

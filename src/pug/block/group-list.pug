@@ -1,0 +1,45 @@
+mixin groupList-var1(listClass)
+	ul.group__list.group__list_var1(class= listClass)
+		each element in groupList
+			if element.class === catalogGroup
+
+			else
+				li.group__item
+					a.group__link(href= element.link)
+						.group__image
+							picture 
+								source(type="image/webp" srcset= element.image + '.webp')
+								source(type="image/jpeg" srcset= element.image + '.jpg')
+								img(src= element.image + '.jpg', alt= element.name)
+						span= element.name
+
+mixin groupList-var2(listClass)
+	ul.group__list.group__list_var2(class= listClass)
+		each element in groupList
+			if element.class === catalogGroup
+
+			else
+				li.group__item
+					a.group__link(href= element.link)
+						.group__image
+							picture 
+								source(type="image/webp" srcset= element.image + '.webp')
+								source(type="image/jpeg" srcset= element.image + '.jpg')
+								img(src= element.image + '.jpg', alt= element.name)
+						span.h4= element.name
+
+mixin groupList-var3(listClass)
+	ul.group__list.group__list_var3(class= listClass)
+		each element in groupList
+			if element.class === catalogGroup
+
+			else
+				li.group__item
+					a.group__link(href= element.link)
+						.group__image
+							picture 
+								source(type="image/webp" srcset= element.image + '.webp')
+								source(type="image/jpeg" srcset= element.image + '.jpg')
+								img(src= element.image + '.jpg', alt= element.name)
+						span.btn-link= element.name
+							include ../../img/btn-arrow.svg

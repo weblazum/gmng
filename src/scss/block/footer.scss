@@ -1,0 +1,102 @@
+.footer {
+	font-size: 1.1em;
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 60px;
+		@include media(laptop-sm) {
+			flex-wrap: wrap;
+			gap: 60px;
+		}
+		@include media(phone-bg) {
+			flex-direction: column;
+			justify-content: center;
+		}
+	}
+	&__row:first-child {
+		padding: 80px 0;
+		@include media(phone-bg) {
+			padding: 40px 0 50px;
+		}
+	}
+	&__logo {
+		display: block;
+		width: 222px;
+		flex-shrink: 0;
+		@include media(phone-bg) {
+			width: 196px;
+		}
+		svg {
+			fill: $color-dark-cyan;
+		}
+	}
+	.nav {
+		max-width: 434px;
+		width: 100%;
+		@include media(laptop-sm) {
+			width: initial;
+		}
+	}
+	.nav__list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px 30px;
+		@include media(phone-bg) {
+			font-size: 22px;
+			text-align: center;
+		}
+		@include media(phone-sm) {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+	.nav__link {
+		&:hover {
+			text-decoration: underline;
+			color: $color-dark-cyan;
+		}
+	}
+	.slogan {
+		white-space: nowrap;
+	}
+	&__row:last-child {
+		padding: 20px 0;
+		border-top: 1px solid $color-dark-cyan;
+		color: $color-grey;
+		@include media(phone-bg) {
+			padding: 20px 0 50px;
+		}
+		.container {
+			@include media(phone-bg) {
+				text-align: center;
+				gap: 20px;
+				font-size: 1em;
+			}
+		}
+	}
+	.social {
+		display: flex;
+		gap: 20px;
+		align-items: center;
+		a {
+			color: $color-grey;
+			&:hover {
+				text-decoration: underline;
+				color: $color-dark-cyan;
+			}
+		}
+		svg {
+			fill: $color-grey;
+			&:hover {
+				fill: $color-dark-cyan;
+			}
+		}
+		@include media(phone-bg) {
+			order: 2;
+		}
+	}
+	.copy {
+		order: 1;
+	}
+}

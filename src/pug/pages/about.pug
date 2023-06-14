@@ -1,0 +1,41 @@
+extends ../base
+
+block vars
+	-let pageName = 'about-page'
+	-let pageTitle = 'О бренде GMNG'
+	-let metaTitle = 'О бренде GMNG'
+	-let metaDescription = 'О бренде производителя широкого спектра устройств для геймеров с разным опытом GMNG'
+block content
+		include ../block/group-list
+		main.main
+			section.top
+				.top__container.container
+					.top__content
+						h1.top__title Нравится &ndash;&nbsp;играй
+						p.top__subtitle.h4 Мы &ndash;&nbsp;GMNG. Выпускаем игровые аксессуары с&nbsp;оптимальным набором характеристик для&nbsp;игр любых жанров и&nbsp;для геймеров с&nbsp;разным опытом, то&nbsp;есть никаких переплат за&nbsp;лишние кнопки или&nbsp;фичи, если тебе достаточно обычной мыши.
+						picture
+							source(type="image/webp", srcset="/dist/img/mouse-02.webp")
+							source(type="image/png", srcset="/dist/img/mouse-02.png")
+							img.top__image(src="/dist/img/mouse-02.png", alt="Нравится – играй")
+			section.devices
+				.devices__container.container
+					.devices__content
+						p.text-large С&nbsp;GMNG наслаждаться процессом может каждый: казуалы и&nbsp;хардкорщики, школота и&nbsp;олдфаги, foreveralone и&nbsp;прожжённые семьянины. С&nbsp;нашими устройствами ты получишь удовольствие от&nbsp;каждого своего действия в&nbsp;игре.
+						p.text-large Мы хотим, чтобы игровое сообщество менялось в лучшую сторону, а&nbsp;культура игры развивалась. Пользователи GMNG &ndash;&nbsp;единомышленники, которые всегда поддержат друг друга.
+						p.h3 Мы за&nbsp;то, чтобы ты свободно выбирал нужные тебе девайсы, комфортно чувствовал себя в&nbsp;любимых виртуальных мирах и&nbsp;играл так, как&nbsp;хочется именно тебе
+					.devices__image
+						picture
+							source(type="image/webp", srcset="/dist/img/headphones-02.webp")
+							source(type="image/jpg", srcset="/dist/img/headphones-02.jpg")
+							img(src="/dist/img/headphones-02.jpg", alt="С GMNG наслаждаться процессом может каждый")
+			section.value
+				.value__container.container
+					.value__content
+						.value__symbol
+							include ../../img/symbol.svg
+						p.text-large Мы убеждены, классные игровые аксессуары должны быть доступны каждому геймеру. Мы выпускаем надёжные и&nbsp;качественные девайсы для&nbsp;геймеров любого уровня по&nbsp;адекватной цене, чтобы гейминг был доступен каждому.
+						p.h3 Мы ценим каждого геймера, его интересы и&nbsp;верим, что&nbsp;игра &ndash;&nbsp;в&nbsp;природе каждого из&nbsp;нас
+			section.catalog
+				.catalog__container.container
+					h2.catalog__title.h3 Смотреть коллекцию девайсов
+					+groupList-var1()

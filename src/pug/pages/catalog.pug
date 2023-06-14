@@ -1,0 +1,28 @@
+extends ../base
+
+block vars
+	-let pageName = 'catalog-page'
+	-let pageTitle = 'Каталог GMNG'
+	-let metaTitle = 'Каталог GMNG'
+	-let metaDescription = 'Каталог производителя широкого спектра устройств для геймеров с разным опытом GMNG'
+block content
+		include ../block/group-list
+		include ../includes/items-list
+		main.main
+			section.group
+				.group__container.container
+					h1.group__title.h3 Категории
+					.group__text
+						p В&nbsp;наших продуктах мы сосредоточились на&nbsp;функциональности устройств. Мы считаем, что у&nbsp;тебя должен быть выбор: купить недорогой девайс с&nbsp;минимумом функций для&nbsp;простых игр или&nbsp;приобрести навороченный гаджет. Выбор за&nbsp;тобой &ndash;&nbsp;играй, как&nbsp;нравится.
+						p У&nbsp;нас ты найдешь:
+					+groupList-var2()
+			section.products 
+				.products__container.container
+					h2.products__title.h3 Товары
+					ul.products__filters.filters-cat
+						li 
+							button.filter-btn.filter-btn--active(data-filter="*") Все товары
+						each element in groupList
+							li
+								button.filter-btn(data-filter="." + element.class)= element.name
+					include ../block/products-list

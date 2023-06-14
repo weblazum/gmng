@@ -1,0 +1,57 @@
+.utilities-page {
+	.utilities {
+		background: url("/dist/img/background-05.webp") center / cover no-repeat;
+		padding: 160px 0 298px;
+		margin: -98px 0 0;
+		@include media(phone-bg) {
+			padding: 140px 0 60px;
+		}
+	}
+	.utilities__top {
+		margin: 0 0 30px;
+	}
+	.utilities__top *:not(:last-child) {
+		margin: 0 0 20px;
+	}
+	.utilities__inner {
+		display: flex;
+		gap: 60px;
+		justify-content: space-between;
+		@include media(phone-bg) {
+			display: block;
+		}
+	}
+	.utilities__content {
+		flex: 0 0 45%;
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		@include media(phone-bg) {
+			margin: 0 0 60px;
+		}
+	}
+	.utilities__block *:not(:last-child) {
+		margin: 0 0 20px;
+	}
+	.utilities__interface {
+		flex: 0 1 55%;
+		overflow: hidden;
+		border-radius: 16px;
+		box-shadow: (0 11px 50px rgba(0, 0, 0, 0.5));
+		align-self: flex-start;
+		@include media(phone-bg) {
+			text-align: center;
+		}
+	}
+	.utilities__wrapper {
+		display: flex;
+		flex-wrap: nowrap;
+	}
+	.utilities__slide {
+		height: auto;
+	}
+	.utilities__slide img {
+		width: 100%;
+		height: 100%;
+	}
+}

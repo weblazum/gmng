@@ -1,0 +1,29 @@
+extends ../../base
+
+
+block vars
+	-let pageName = 'reviews-item-page'
+	-let metaTitle = 'Обзоры на корпус GMNG OGC-G200'
+	-let metaDescription = 'Обзоры на товары бренда GMNG. Здесь представлены отзывы популярных блогеров на официальную продукцию GMNG'
+	-let itemID = '1830311'
+	-let pageTitle = 'Обзоры на корпус GMNG OGC-G200'
+block content
+		include ../../includes/reviews-list
+		main.main
+			section.review
+				.review__container.container
+					+breadcrumbs(2, 'Обзоры', 'reviews')
+					.review__inner
+						.review__image 
+							picture
+								source(type='image/webp', srcset= '/dist/img/catalog/items/' + itemID + '_main' + '.webp')
+								source(type='image/jpg', srcset= '/dist/img/catalog/items/' + itemID + '_main' + '.jpg')
+								img(src= '/dist/img/catalog/items/' + itemID + '_main' + '.jpg', alt= pageTitle)
+						.review__content 	
+							each element in reviewsList
+								if element.id === itemID
+									h1.review__title.h3= element.title
+							.review__user-content
+								h2 Обзор от IRISKA
+								p Ознакомиться с обзором можно по ссылке <a href="https://www.youtube.com/shorts/lw5ly_tbhWk" target="_blank"> https://www.youtube.com/shorts/lw5ly_tbhWk</a>
+			include ../../block/reviews-also

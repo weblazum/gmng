@@ -1,0 +1,156 @@
+.reviews-page {
+	.main {
+		padding: 40px 0 120px;
+		@include media(phone-bg) {
+			padding: 10px 0 100px;
+		}
+	}
+	.reviews__title {
+		margin: 0 0 30px;
+	}
+	.reviews__filters {
+		display: flex;
+		gap: 20px;
+		margin: 0 0 40px;
+		flex-wrap: wrap;
+	}
+	.reviews__list {
+		max-width: calc($frame-width-base + 24px);
+		margin: 0 -12px;
+		overflow-y: hidden;
+	}
+	.reviews__item {
+		width: calc(33.333% - 24px);
+		margin: 0 12px 60px 12px;
+
+		@include media(tablet) {
+			width: calc(50% - 24px);
+		}
+		@include media(phone-md) {
+			width: calc(100% - 24px);
+		}
+	}
+	.reviews__link {
+		@include font(22px, 28px, 500);
+	}
+	.reviews__image {
+		position: relative;
+		min-height: 220px;
+		margin: 0 0 20px;
+	}
+	.reviews__image img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+}
+
+.reviews-item-page {
+	.main {
+		padding: 34px 0 160px;
+		@include media(phone-bg) {
+			padding: 10px 0 100px;
+		}
+	}
+	.review {
+		padding: 0 0 200px;
+		@include media(phone-bg) {
+			padding: 0 0 60px;
+		}
+	}
+	.review__inner {
+		padding: 82px 0 0;
+		display: flex;
+		justify-content: space-between;
+		gap: 100px;
+		@include media(tablet) {
+			flex-direction: column;
+			gap: 40px;
+		}
+		@include media(phone-bg) {
+			padding: 40px 0 0;
+		}
+	}
+	.review__title {
+		margin: 0 0 40px;
+	}
+	.review__content {
+		max-width: 524px;
+		@include media(tablet) {
+			max-width: 100%;
+		}
+	}
+	.review__user-content * {
+		margin: 0 0 10px;
+	}
+	.review__user-content h2,
+	.review__user-content h3 {
+		@include font(22px, 26px, 600);
+		@include media(phone-bg) {
+			@include font(18px, 22px, 600);
+		}
+	}
+	.review__user-content a {
+		color: $color-dark-cyan;
+	}
+	.review__image {
+		max-width: 614px;
+		width: 100%;
+		text-align: center;
+		margin: 0 auto;
+	}
+	.review__image picture {
+		display: block;
+		width: 100%;
+		max-width: 614px;
+	}
+	.review__image img {
+		max-height: 482px;
+	}
+	.also__title {
+		margin: 0 0 40px;
+	}
+	.also__list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 60px 24px;
+		@include media(tablet) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include media(phone-md) {
+			display: flex;
+			flex-direction: column;
+			gap: 40px;
+		}
+	}
+	.also__item {
+		@include font(22px, 26px, 600);
+		@include media(phone-bg) {
+			@include font(18px, 22px, 600);
+		}
+	}
+	.also__image {
+		height: 234px;
+		overflow: hidden;
+		position: relative;
+		margin: 0 0 20px;
+		@include media(phone-bg) {
+			height: 190px;
+		}
+	}
+
+	.also__image img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.also__link span {
+		display: block;
+	}
+}

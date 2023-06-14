@@ -1,0 +1,45 @@
+include ../includes/catalog-list
+
+header.header
+	.container
+		button.burger
+			include ../../img/burger.svg
+		if pageName === "main-page"
+			.logo
+				include ../../img/logo.svg
+		else 	
+			a(href="/dist/index.html").logo
+				include ../../img/logo.svg
+		.search
+			form.search__form
+				input(type="search" class="search__input" placeholder="Поиск" value="")
+				input(type="submit" value id="searchBtn")
+				label(for="searchBtn") 
+					include ../../img/search.svg
+			button.search__icon
+				include ../../img/search.svg
+			button.search__icon-mob
+				include ../../img/search.svg
+	nav.nav
+		.container
+			ul.nav__list.menu
+				li.nav__item 
+					a.nav__link.h3(href="/dist/about.html") О&nbsp;бренде
+				li.nav__item 
+					a.nav__link.h3(href="/dist/reviews.html") Обзоры
+				li.nav__item 
+					a.nav__link.h3(href="/dist/utilities.html") Утилиты 
+				li.nav__item 
+					a.nav__link.h3(href="/dist/news.html") Пресс-центр
+				li.nav__item 
+					a.nav__link.h3(href="/dist/support.html") Поддержка
+				li.nav__item 
+					a.nav__link.h3(href="/dist/contacts.html") Контакты
+			ul.nav__list.catalog-list
+				li.nav__item.h3
+					a.nav__link(href="/dist/catalog.html") Товары
+				li.nav__item
+					ul.catalog-list__groups
+						each element in groupList
+							li.nav__item.catalog-list__item
+								a.catalog-list__link.h4(href= element.link)= element.name

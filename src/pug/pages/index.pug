@@ -1,0 +1,100 @@
+extends ../base
+
+block vars
+	-let pageName = 'main-page'
+	-let pageTitle = 'GMNG - официальный сайт игровых компьютерных мышек и аксессуаров'
+	-let metaTitle = 'GMNG - официальный сайт игровых компьютерных мышек и аксессуаров'
+	-let metaDescription = 'GMNG - производитель широкого спектра устройств для геймеров с разным опытом, то есть никаких переплат за лишние кнопки или фичи, если тебе достаточно обычной мыши'
+block content
+		include ../block/group-list
+		main.main 
+			section.top
+				h1.top__header.hidden-header= pageTitle
+				.swiper-banner.swiper
+					.swiper-wrapper
+						.swiper-slide
+							.top__banner.banner-01
+								.container
+									.top__text
+										h2.top__header.h1 Получай удовольствие<br>от&nbsp;гейминга
+										p.top__subheader.h4 Игровая беспроводная компьютерная мышь 980GMW
+										+btnLink('top__btn', 'Подробнее', '/dist/catalog/items/mouse-980GMW.html')
+										.sticker 
+											include ../../img/sticker.svg
+						.swiper-slide
+							.top__banner.banner-02
+								.container
+									.top__text
+										h2.top__header.h1 Мгновенный отклик<br>яркого гейминга
+										p.top__subheader.h4 Монитор GMNG 31.5' Gaming GM-32F11
+										+btnLink('top__btn', 'Подробнее', '/dist/catalog/items/monitor-GM-27F11.html')
+										.sticker 
+											include ../../img/sticker.svg
+						.swiper-slide
+							.top__banner.banner-03
+								.container
+									.top__text
+										h2.top__header.h1 Игровая механика на&nbsp;максималках
+										p.top__subheader.h4 Клавиатура GMNG 999GK
+										+btnLink('top__btn', 'Подробнее', '/dist/catalog/items/keyboard-925GK.html')
+										.sticker 
+											include ../../img/sticker.svg
+					.swiper-pagination
+			section.about
+				.about__container.container
+					.about__experience 	
+						p.about__text.h4 Опыт десятилетий на&nbsp;рынке техники помогает заложить в&nbsp;продукт оптимальный набор характеристик для&nbsp;комфортной игры на&nbsp;любом уровне и&nbsp;в&nbsp;любом жанре
+					.about__work 	
+						h2.about__title.h1 GMNG &ndash;&nbsp;мы делаем игровую периферию, которая может быть надёжной поддержкой в&nbsp;любой игре
+						+btnLink('about__btn', 'Читать подробно о бренде', 'about.html')
+			section.group
+				.group__container.container
+					+groupList-var3()
+			section.culture
+				.culture__container.container
+					.culture__content
+						.culture__inner
+							h2.culture__title Развиваем культуру гейминга
+							p.culture__text.h4 Мы хотим, чтобы каждому было комфортно в&nbsp;любой игре, чтобы удовольствие от&nbsp;гейминга было доступным и&nbsp;всеобщим. Мы знаем, чего хотят геймеры и&nbsp;видим, какие стереотипы давно пора преодолеть.
+			section.utilities
+				.utilities__container.container
+					h2.utilities__title.h1 Настраивай свою атмосферу игры с&nbsp;помощью утилит
+					ul.utilities__list
+						li.utilities__item
+							.utilities__image
+								picture
+									source(type="image/webp", srcset="/dist/img/headphones.webp")
+									source(type="image/png", srcset="/dist/img/headphones.png")
+									img(src/dist/="img/headphones.png", alt="Эквалайзер")
+							.utilities__text
+								h3.utilities__name Эквалайзер
+								p Создай уникальный звуковой профиль для&nbsp;каждой игры
+						li.utilities__item.utilities__item_center
+							.utilities__image
+								picture 
+									source(type="image/webp", srcset="/dist/img/mouse.webp")
+									source(type="image/png", srcset="/dist/img/mouse.png")
+									source(srcset="img/mouse-mob.png" media="(max-width:1024px)")
+									source(srcset="img/mouse-mob.webp" media="(max-width:1024px)")
+									img(src="/dist/img/mouse.png", alt="DPI")
+							.utilities__text
+								h3.utilities__name DPI
+								p Программируй кнопки как&nbsp;нравится
+						li.utilities__item
+							.utilities__image
+								picture
+									source(type="image/webp", srcset="/dist/img/keyboard.webp")
+									source(type="image/png", srcset="/dist/img/keyboard.png")
+									img(src="/dist/img/keyboard.png", alt="Макросы")
+							.utilities__text
+								h3.utilities__name Макросы
+								p Создавай собственные макросы
+					+btnLink("utilities__btn", "Смотреть утилиты", "utilities.html")
+			section.choice
+				.choice__container.container
+					.choice__content 
+						h2.choice__title.h1 С&nbsp;GMNG ты&nbsp;можешь играть по-своему
+						p.choice__subtitle.h3 Выбери свой продукт для&nbsp;комфорта при&nbsp;любом уровне игры и&nbsp;в&nbsp;любом жанре
+						+btnLink('choice__btn btn-link--white', 'Купить на Ситилинк', 'https://www.citilink.ru/brands/GMNG/', '_blank')
+
+

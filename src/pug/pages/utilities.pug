@@ -1,0 +1,34 @@
+extends ../base
+
+block vars
+	-let pageName = 'utilities-page'
+	-let pageTitle = 'Утилиты'
+	-let metaTitle = 'Утилиты | GMNG'
+	-let metaDescription = 'Утилиты производителя широкого спектра устройств для геймеров с разным опытом GMNG'
+block content
+		main.main 
+			section.utilities
+				.utilities__container.container
+					.utilities__top
+						h1.utilities__title Экосистема утилит GMNG
+						p.h4 Мы в&nbsp;GMNG разрабатываем не&nbsp;только прикольную игровую периферию, но&nbsp;и&nbsp;полезные многофункциональные утилиты. Фирменное ПО поможет тебе кастомизировать свои девайсы по&nbsp;максимуму. Повышай функциональность мыши и&nbsp;клавиатуры, чтобы получить еще&nbsp;больше удовольствия от&nbsp;игры.
+						p.h4 У нас в запасе:
+					.utilities__inner
+						.utilities__content
+							.utilities__block 
+								h2.h3 Макросы для&nbsp;клав
+								p С&nbsp;ними ты сможешь создать свою комбинации клавиш, чтобы, например, снимать или&nbsp;надевать снаряжение моментально, использовать вспомогательное оружие и&nbsp;многое другое.
+								+btnBase('utilities__button', 'Скоро')
+							.utilities__block 
+								h2.h3 Утилиты
+								p Они помогут тебе запрограммировать кнопки мыши под&nbsp;себя. Например, можно будет за&nbsp;доли секунды настраивать разные параметры &ndash;&nbsp;подсветку, чувствительность сенсора, а&nbsp;также в&nbsp;один клик выполнять игровые действия: применять скилы в&nbsp;RPG, быстрее целиться и&nbsp;т.д.
+								+btnBase('utilities__button', 'Скоро')
+						.utilities__interface
+							.utilities__swiper.swiper-utilities.swiper
+								.utilities__wrapper.swiper-wrapper
+									-for (i = 0; i < 6; i++)
+										.swiper-slide.utilities__slide
+											picture.utilities__image
+												source(type='image/webp' srcset= '/dist/img/utilities/utilities-' + (i +1) +'.webp', alt='Утилиты ' + (i +1))
+												source(type='image/jpeg' srcset= '/dist/img/utilities/utilities-' + (i +1) +'.jpg', alt='Утилиты ' + (i +1))
+												img(src='/dist/img/utilities/utilities-' + (i +1) +'.jpg', alt='Утилиты ' + (i +1))

@@ -1,0 +1,17 @@
+extends ../base
+
+block vars
+	-let pageName = 'not-found-page'
+	-let pageTitle = 'Такой страницы не сущеcтвует'
+	-let metaTitle = 'Такой страницы не сущеcтвует | GMNG'
+	-let metaDescription = 'К сожалению, запрашиваемая Вами страница не найдена'
+block content
+		main.main
+			section.not-found
+				.not-found__container.container 	
+					.not-found__content
+						h1.not-found__title 404
+						p.not-found__subtitle.h3 К&nbsp;сожалению, запрашиваемая<br>Вами страница не&nbsp;найдена
+						.not-found__links
+							+btnLink('.not-found__btn', 'На главную', '/dist/index.html')
+							+btnLink('.not-found__btn', 'В каталог', '/dist/catalog.html')

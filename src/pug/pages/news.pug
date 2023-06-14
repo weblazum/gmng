@@ -1,0 +1,22 @@
+extends ../base
+
+block vars
+	-let pageName = 'news-page'
+	-let pageTitle = 'Пресс‑центр'
+	-let metaTitle = 'Пресс‑центр | GMNG'
+	-let metaDescription = 'Актуальные новости о технике GMNG'
+block content
+		include ../includes/news-list
+		main.main
+			section.news 
+				.news__container.container
+					+breadcrumbs
+					h1.news__title.h2= pageTitle
+					ul.news__list 
+						each element in newsList
+							li.news__item 
+								span.news__date= element.date
+								h2.news__link.h3
+									a(href= element.link)= element.title
+								p.news__announce= element.announce
+

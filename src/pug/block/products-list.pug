@@ -1,0 +1,29 @@
+ul.products__list.grid.swiper-wrapper
+	each element in itemsList
+		mixin productItem 
+			li.products__item.grid-item.swiper-item(class= element.groupClass)
+				a.products__link(href= element.link)
+					picture.products__image
+						source(type="image/webp" srcset= element.image + '.webp')
+						source(type="image/jpeg" srcset= element.image + '.jpg')
+						img(src= element.image + '.jpg', alt= element.name)
+					p.products__id="id " + element.id
+					p.products__title.link= element.name
+					if element.action != null
+						.products__actions
+							if element.hit === true
+								span(class="icon-action icon-hit") Хит продаж
+							if element.new === true
+								span(class="icon-action icon-new") Новинка
+							if element.soon === true
+								span(class="icon-action icon-soon") Скоро
+
+		if element.groupClass === catalogGroup & pageName === "group-page"
+			+productItem
+		if pageName === "catalog-page"
+			+productItem
+		if pageName === "item-page" & element.groupClass === catalogGroup
+			if element.id === itemID
+
+			else
+				+productItem

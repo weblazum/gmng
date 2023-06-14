@@ -1,0 +1,99 @@
+.about-page {
+	.top {
+		margin: -98px auto 0;
+		padding: 260px 0 0;
+		background: url("/dist/img/background-03.webp") center / cover no-repeat;
+		overflow: hidden;
+		@include media(phone-bg) {
+			padding: 150px 0 0;
+		}
+		&__content {
+			text-align: center;
+			max-width: 836px;
+			margin: 0 auto;
+		}
+		&__title {
+			margin: 0 0 40px;
+			@include media(phone-bg) {
+				margin: 0 0 20px;
+			}
+		}
+		&__subtitle {
+			margin: 0 0 120px;
+			@include media(phone-bg) {
+				margin: 0 0 40px;
+			}
+		}
+		&__image {
+			transform: translate(24px, 6px);
+		}
+	}
+	.devices {
+		padding: 250px 0 250px;
+		@include media(phone-bg) {
+			padding: 60px 0;
+		}
+		&__container {
+			display: flex;
+			gap: 80px;
+			justify-content: space-between;
+			align-items: center;
+			@include media(tablet) {
+				flex-direction: column;
+				align-items: center;
+				gap: 60px;
+			}
+		}
+		&__content {
+			flex: 0 1 60%;
+		}
+		&__content p {
+			margin: 0 0 30px;
+		}
+		&__content p:last-child {
+			margin: 0;
+		}
+		&__image {
+			max-width: 400px;
+			flex: 0 1 40%;
+			width: 100%;
+		}
+	}
+	.value {
+		padding: 290px 0;
+		background: url("/dist/img/background-04.webp") 85% / cover no-repeat;
+		@include media(laptop-sm) {
+			background-position: center;
+		}
+		@include media(tablet) {
+			background-position: left;
+		}
+		@include media(phone-bg) {
+			padding: 194px 0 230px;
+		}
+		&__symbol {
+			display: none;
+			margin: 0 0 30px;
+			max-width: 100px;
+			@include media(tablet) {
+				display: block;
+			}
+		}
+		&__content {
+			max-width: 680px;
+			margin: 0 auto 0 0;
+		}
+		&__content p {
+			margin: 0 0 30px;
+		}
+	}
+	.catalog {
+		padding: 200px 0 100px;
+		@include media(phone-bg) {
+			padding: 100px 0;
+		}
+	}
+	.catalog__title {
+		margin: 0 0 40px;
+	}
+}

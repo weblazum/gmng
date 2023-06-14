@@ -1,0 +1,25 @@
+@charset "UTF-8";
+// подключение функции вычеслений в sass
+@use "sass:math";
+
+@import "includes/_variables";
+@import "includes/_media";
+@import "includes/_reset";
+@import "includes/_fonts";
+
+@import "/dist/css/swiper-bundle.min.css";
+@import "/dist/css/fancybox.css";
+@import "base";
+@import "block";
+
+@import "block/header";
+@import "block/footer";
+@import "pages/main";
+@import "pages/about";
+@import "pages/contacts";
+@import "pages/support";
+@import "pages/utilities";
+@import "pages/reviews";
+@import "pages/news";
+@import "pages/404";
+@import "pages/catalog";

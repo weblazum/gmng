@@ -1,0 +1,18 @@
+extends ../base
+
+block vars
+	-let pageName = 'search-page'
+	-let pageTitle = 'Поиск'
+	-let metaTitle = 'Поиск | GMNG'
+	-let metaDescription = 'Поиск'
+block content
+		main.main 
+			section
+				.container
+					form.search__form#search-form(action="search.html")
+						input(type="search" class="search__input" placeholder="Поиск" value="")
+						input(type="submit" value id="searchBtn")
+						label(for="searchBtn") 
+							include ../../img/search.svg
+					button.search__icon
+						include ../../img/search.svg

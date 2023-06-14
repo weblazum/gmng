@@ -1,0 +1,21 @@
+extends ../../base
+
+block vars
+	-let pageName = 'group-page'
+	-let pageTitle = 'Подставки для наушников'
+	-let metaDescription = 'Подставки для наушников торговой марки GMNG, заказ продукции по выгодным ценам с доставкой'
+	-let catalogGroup = 'coasters'
+	-let metaTitle = 'Подставки для наушников GMNG'
+block content
+		include ../../block/group-list
+		include ../../includes/items-list
+		main.main
+			section.products
+				.container.products__container
+					+breadcrumbs(2, 'Товары', 'catalog')
+					h1.products__title.h2= pageTitle
+					include ../../block/products-list
+			section.group
+				.group__container.container
+					h2.group__title.h3 Смотреть другие категории товаров
+					+groupList-var1()
