@@ -8,7 +8,7 @@ mixin btnBase(className, title, href, target)
 mixin breadcrumbs(level, parentName, parentLink, parentNameNext, parentLinkNext)
 	if level === 3
 		.breadcrumbs 
-			a(href="/index.html") Главная
+			a(href="/gmng/index.html") Главная
 			span /
 			a(href= "/" + parentLink + ".html")= parentName
 			span /
@@ -18,13 +18,13 @@ mixin breadcrumbs(level, parentName, parentLink, parentNameNext, parentLinkNext)
 	else
 		if level === 2
 			.breadcrumbs 
-				a(href="/index.html") Главная
+				a(href="/gmng/index.html") Главная
 				span /
 				a(href= "/" + parentLink + ".html")= parentName
 				span /
 				span= pageTitle
 		else 
 			.breadcrumbs 
-				a(href="/index.html") Главная
+				a(href="/gmng/index.html") Главная
 				span /
 				span= pageTitle
