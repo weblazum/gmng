@@ -194,12 +194,14 @@
 	opacity: 0;
 	transition: all 0.3s ease-in;
 	z-index: 50;
+	pointer-events: none;
 	@include media(phone-bg) {
 		display: none;
 	}
 	&.show {
 		opacity: 1;
 		visibility: visible;
+		pointer-events: auto;
 	}
 	svg {
 		transform: rotate(-90deg);
