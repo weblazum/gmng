@@ -10,9 +10,9 @@ mixin breadcrumbs(level, parentName, parentLink, parentNameNext, parentLinkNext)
 		.breadcrumbs 
 			a(href="/gmng/index.html") Главная
 			span /
-			a(href= "/" + parentLink + ".html")= parentName
+			a(href="/gmng/" + parentLink + ".html")= parentName
 			span /
-			a(href= "/" + parentLinkNext + ".html")= parentNameNext
+			a(href="/gmng/" + parentLinkNext + ".html")= parentNameNext
 			span /
 			span= pageTitle
 	else
@@ -20,7 +20,7 @@ mixin breadcrumbs(level, parentName, parentLink, parentNameNext, parentLinkNext)
 			.breadcrumbs 
 				a(href="/gmng/index.html") Главная
 				span /
-				a(href= "/" + parentLink + ".html")= parentName
+				a(href="/gmng/" + parentLink + ".html")= parentName
 				span /
 				span= pageTitle
 		else 
