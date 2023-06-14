@@ -9,9 +9,9 @@ html(lang='ru')
 		title= metaTitle
 		meta(name='description', content= metaDescription)
 		meta(name='robots', content='noindex, nofollow')
-		link(href='/dist/css/style.css', rel='stylesheet')
-		link(rel='shortcut icon', href='/dist/img/favicon.ico')
-		link(rel='apple-touch-icon', href='/dist/img/favicon.ico')
+		link(href='/css/style.css', rel='stylesheet')
+		link(rel='shortcut icon', href='/img/favicon.ico')
+		link(rel='apple-touch-icon', href='/img/favicon.ico')
 	body(class= pageName)
 		.overlay
 		.wrapper
@@ -20,11 +20,11 @@ html(lang='ru')
 			include block/footer
 			button(id="toTop")
 				include ../img/btn-arrow.svg
-		script(src='/dist/libs/jquery.min.js')
-		script(src='/dist/libs/swiper-bundle.min.js')
-		script(src='/dist/libs/isotope.min.js')
-		script(src='/dist/libs/imagesloaded.min.js')
-		script(src='/dist/libs/fancybox.min.js')
+		script(src='/libs/jquery.min.js')
+		script(src='/libs/swiper-bundle.min.js')
+		script(src='/libs/isotope.min.js')
+		script(src='/libs/imagesloaded.min.js')
+		script(src='/libs/fancybox.min.js')
 		if pageName === 'contacts-page'
 			script(async src='https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru_RU&scroll=false&onload=getYaMap')
-		script(src='/dist/js/main.js')
+		script(src='/js/main.js')

@@ -16,9 +16,9 @@ block content
 					.review__inner
 						.review__image 
 							picture
-								source(type='image/webp', srcset= '/dist/img/catalog/items/' + itemID + '_main' + '.webp')
-								source(type='image/jpg', srcset= '/dist/img/catalog/items/' + itemID + '_main' + '.jpg')
-								img(src= '/dist/img/catalog/items/' + itemID + '_main' + '.jpg', alt= pageTitle)
+								source(type='image/webp', srcset= '/img/catalog/items/' + itemID + '_main' + '.webp')
+								source(type='image/jpg', srcset= '/img/catalog/items/' + itemID + '_main' + '.jpg')
+								img(src= '/img/catalog/items/' + itemID + '_main' + '.jpg', alt= pageTitle)
 						.review__content 	
 							each element in reviewsList
 								if element.id === itemID
