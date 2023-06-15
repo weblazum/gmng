@@ -2,7 +2,7 @@ ul.products__list.grid.swiper-wrapper
 	each element in itemsList
 		mixin productItem 
 			li.products__item.grid-item.swiper-item(class= element.groupClass)
-				a.products__link(href= element.link)
+				a.products__link(href= element.link, aria-label= element.name)
 					picture.products__image
 						source(type="image/webp" srcset= element.image + '.webp')
 						source(type="image/jpeg" srcset= element.image + '.jpg')

@@ -5,7 +5,7 @@ mixin groupList-var1(listClass)
 
 			else
 				li.group__item
-					a.group__link(href= element.link)
+					a.group__link(href= element.link, aria-label= element.name)
 						.group__image
 							picture 
 								source(type="image/webp" srcset= element.image + '.webp')
@@ -20,7 +20,7 @@ mixin groupList-var2(listClass)
 
 			else
 				li.group__item
-					a.group__link(href= element.link)
+					a.group__link(href= element.link, aria-label= element.name)
 						.group__image
 							picture 
 								source(type="image/webp" srcset= element.image + '.webp')
@@ -35,7 +35,7 @@ mixin groupList-var3(listClass)
 
 			else
 				li.group__item
-					a.group__link(href= element.link)
+					a.group__link(href= element.link, aria-label= element.name)
 						.group__image
 							picture 
 								source(type="image/webp" srcset= element.image + '.webp')

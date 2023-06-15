@@ -72,10 +72,10 @@ block content
 						li.utilities__item.utilities__item_center
 							.utilities__image
 								picture 
-									source(type="image/webp", srcset="/gmng/img/mouse.webp")
-									source(type="image/png", srcset="/gmng/img/mouse.png")
-									source(srcset="img/mouse-mob.png" media="(max-width:1024px)")
-									source(srcset="img/mouse-mob.webp" media="(max-width:1024px)")
+									source(type="image/webp", srcset="/gmng/img/mouse.webp", media="(min-width:1024px)")
+									source(type="image/png", srcset="/gmng/img/mouse.png", media="(min-width:1024px)")
+									source(srcset="/gmng/img/mouse-mob.webp", media="(max-width:1024px)")
+									source(srcset="/gmng/img/mouse-mob.png", media="(max-width:1024px)")
 									img(src="/gmng/img/mouse.png", alt="DPI")
 							.utilities__text
 								h3.utilities__name DPI

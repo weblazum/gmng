@@ -7,7 +7,7 @@ section.also
 
 				else
 					li.also__item(class= element.group)
-						a.also__link(href= element.link) 
+						a.also__link(href= element.link, aria-label= element.title) 
 							picture.also__image
 								source(type='image/webp' srcset= element.image + '.webp')
 								source(type='image/jpg' srcset= element.image + '.jpg')

@@ -68,7 +68,7 @@ block content
 										ul.gallery__list.swiper-wrapper
 											- for(let i = 0; i < galleryItemsCount; i++)
 												li.gallery__item.swiper-slide
-													a.gallery__link(href='/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m.jpg' data-fancybox='items-gallery')
+													a.gallery__link(href='/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.jpg' , data-fancybox='items-gallery', aria-label= pageTitle + ' фото ' + (i+1))
 														picture.gallery__image
 															source(type='image/webp' srcset= '/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.webp')
 															source(type='image/jpeg' srcset= '/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.jpg')
@@ -85,8 +85,8 @@ block content
 															source(type='image/jpeg' srcset= '/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.jpg')
 															img(src='/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.jpg', alt= pageTitle + '_' + (i + 1))
 									.gallery__buttons.swiper-buttons
-										.gallery-button-prev.swiper-button-prev
-										.gallery-button-next.swiper-button-next
+										.gallery-button-prev.swiper-button-prev(aria-label="Предыдущий")
+										.gallery-button-next.swiper-button-next(aria-label="Следующий")
 						.item__content
 							span.item__id id #{itemID}
 							h1.item__title.h4= pageTitle
@@ -101,19 +101,19 @@ block content
 										if element.manualLink != null
 											.downloads__item
 												p.downloads__type.h4 Руководство пользователя
-												a.downloads__link(href= element.manualLink, target="_blank")= element.manualSize
+												a.downloads__link(href= element.manualLink, target="_blank", aria-label="Скачать руководство пользователя")= element.manualSize
 													include ../../../img/download.svg
 										if element.driverLink != null
 											.downloads__item
 												p.downloads__type.h4 Драйвер
-												a.downloads__link(href= element.driverLink)= element.driverSize
+												a.downloads__link(href= element.driverLink, aria-label="Скачать драйвер")= element.driverSize
 													include ../../../img/download.svg
 							.item__buy.buy
 								p.buy__title Купить
 								.buy__links
-									a.buy__link(href="https://www.citilink.ru/search/?text=" + itemID, target="_blank")
+									a.buy__link(href="https://www.citilink.ru/search/?text=" + itemID, target="_blank", aria-label="Купить в Ситилинк")
 										include ../../../img/logo-citilink.svg
-									a.buy__link(href="https://market.yandex.ru/search?text=" + pageTitle, target="_blank")
+									a.buy__link(href="https://market.yandex.ru/search?text=" + pageTitle, target="_blank", aria-label="Купить в Яндекс.Маркет")
 										include ../../../img/logo-yamarket.svg
 			section.features
 				.container.features__container
@@ -167,7 +167,7 @@ block content
 									each element in reviewsList
 										if element.id === itemID
 											li.reviews__item(class= element.group)
-												a.reviews__link(href= element.link) 
+												a.reviews__link(href= element.link, aria-label= element.title) 
 													picture.reviews__image
 														source(type='image/webp' srcset= element.image + '.webp')
 														source(type='image/jpg' srcset= element.image + '.jpg')

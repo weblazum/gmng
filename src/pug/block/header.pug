@@ -2,13 +2,13 @@ include ../includes/catalog-list
 
 header.header
 	.container
-		button.burger
+		button.burger(aria-label="Открыть меню")
 			include ../../img/burger.svg
 		if pageName === "main-page"
 			.logo
 				include ../../img/logo.svg
 		else 	
-			a(href="/gmng/index.html").logo
+			a(href="/gmng/index.html" aria-label="Логотип GMNG").logo
 				include ../../img/logo.svg
 		.search
 			form.search__form
@@ -16,9 +16,9 @@ header.header
 				input(type="submit" value id="searchBtn")
 				label(for="searchBtn") 
 					include ../../img/search.svg
-			button.search__icon
+			button.search__icon(aria-label="Поиск на сайте")
 				include ../../img/search.svg
-			button.search__icon-mob
+			button.search__icon-mob(aria-label="Поиск на сайте")
 				include ../../img/search.svg
 	nav.nav
 		.container
