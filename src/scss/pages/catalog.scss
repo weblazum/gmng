@@ -345,6 +345,7 @@
 	.gallery__item .gallery__image {
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		height: 100%;
 	}
 	.gallery__buttons {
@@ -409,6 +410,7 @@
 			height: auto;
 			padding: 4px;
 			justify-content: center;
+			margin: 0 auto 1px;
 		}
 		.swiper-slide-thumb-active {
 			border: 1px solid $color-dark-cyan;
