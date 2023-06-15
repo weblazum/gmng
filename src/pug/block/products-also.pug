@@ -4,8 +4,10 @@
 			mixin productItem 
 				li.products__item.swiper-slide(class= element.groupClass)
 					a.products__link(href= element.link, aria-label= element.name)
-						.products__image
-							img(src="/gmng/img/catalog/items/" + element.id + "_main.jpg", alt= element.name)
+						picture.products__image
+							source(type='image/webp' srcset='/dist/img/catalog/items/' + element.id + '_main' + '.webp')
+							source(type='image/jpg' srcset='/dist/img/catalog/items/' + element.id + '_main' + '.jpg')
+							img(src='/dist/img/catalog/items/' + element.id + '_main' + '.jpg', alt= element.name)
 						p.products__id="id " + element.id
 						p.products__title.link= element.name
 						if element.action != null
@@ -27,5 +29,5 @@
 				else
 					+productItem 
 .products-buttons.swiper-buttons
-	.products-button-prev.swiper-button-prev(aria-label="Предыдущий слайд")
-	.products-button-next.swiper-button-next(aria-label="Следующий слайд")
+	.products-button-prev.swiper-button-prev(aria-label="Предыдущий")
+	.products-button-next.swiper-button-next(aria-label="Следующий")

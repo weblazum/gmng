@@ -25,11 +25,11 @@ block content
 										ul.gallery__list.swiper-wrapper
 											- for(let i = 0; i < galleryItemsCount; i++)
 												li.gallery__item.swiper-slide
-													a.gallery__link(href='/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.jpg' , data-fancybox='items-gallery', aria-label= pageTitle + ' фото ' + (i+1)) 
+													a.gallery__link(href='/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.jpg' , data-fancybox='items-gallery', aria-label= pageTitle + ' фото ' + (i+1)) 
 														picture.gallery__image
-															source(type='image/webp' srcset= '/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.webp')
-															source(type='image/jpeg' srcset= '/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.jpg')
-															img(src='/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.jpg', alt= pageTitle + '_' + (i + 1))
+															source(type='image/webp' srcset= '/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.webp')
+															source(type='image/jpeg' srcset= '/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.jpg')
+															img(src='/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.jpg', alt= pageTitle + '_' + (i + 1))
 									.swiper-pagination.gallery-pagination
 							if galleryItemsCount > 1
 								.gallery__container
@@ -38,9 +38,9 @@ block content
 												- for(let i = 0; i < galleryItemsCount; i++)
 													li.gallery__item.swiper-slide
 														picture.gallery__image
-															source(type='image/webp' srcset= '/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.webp')
-															source(type='image/jpeg' srcset= '/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.jpg')
-															img(src='/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.jpg', alt= pageTitle + '_' + (i + 1))
+															source(type='image/webp' srcset= '/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.webp')
+															source(type='image/jpeg' srcset= '/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.jpg')
+															img(src='/dist/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.jpg', alt= pageTitle + '_' + (i + 1))
 									.gallery__buttons
 										.gallery-button-prev.swiper-button-prev(aria-label="Предыдущий")
 										.gallery-button-next.swiper-button-next(aria-label="Следующий")
@@ -66,7 +66,7 @@ block content
 												a.downloads__link(href= element.driverLink, aria-label="Скачать")= element.driverSize
 													include ../../../img/download.svg
 							.item__buy.buy
-								p.buy__title Купить
+								p.buy__title Купить в магазинах
 								.buy__links
 									a.buy__link(href="https://www.citilink.ru/search/?text=" + itemID, target="_blank", aria-label="Купить в Ситилинк")
 										include ../../../img/logo-citilink.svg
