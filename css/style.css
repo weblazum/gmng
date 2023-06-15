@@ -167,6 +167,8 @@ button {
   font-family: "Futura New", sans-serif;
   font-size: 18px;
   font-weight: 400;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
 }
 
 input {
