@@ -221,6 +221,8 @@ if (slider !== 0 && slideItem.length > 1) {
 	});
 	const swiperGalleryMain = new Swiper('.gallery__main', {
 		slidesPerView: 1,
+		autoHeight: true,
+		// calculateHeight: true,
 		// loop: true,
 		// loopedSlides: 5,
 		effect: 'fade',
