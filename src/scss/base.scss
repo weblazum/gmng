@@ -85,6 +85,8 @@ button {
 	font-family: $font-family-base;
 	font-size: $font-size-base;
 	font-weight: $font-weight-base;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
 }
 
 input {
