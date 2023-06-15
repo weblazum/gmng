@@ -2210,7 +2210,6 @@ input[type=search]::-webkit-search-cancel-button {
 .group-page .products__list,
 .item-page .products__list {
   max-width: 1319px;
-  margin: 0 -12px;
   overflow-y: hidden;
 }
 .catalog-page .products__item,
