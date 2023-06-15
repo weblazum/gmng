@@ -1,5 +1,5 @@
-@import "/dist/css/swiper-bundle.min.css";
-@import "/dist/css/fancybox.css";
+@import "/gmng/css/swiper-bundle.min.css";
+@import "/gmng/css/fancybox.css";
 *,
 *::before,
 *::after {
@@ -582,7 +582,7 @@ input[type=search]::-webkit-search-cancel-button {
 .swiper-button-prev:after,
 .swiper-button-next:after {
   content: "";
-  background: url("/dist/img/slider-arrow.svg") no-repeat;
+  background: url("/gmng/img/slider-arrow.svg") no-repeat;
   width: 8px;
   height: 14px;
 }
@@ -1184,27 +1184,27 @@ input[type=search]::-webkit-search-cancel-button {
   transition: width 0.5s, height 0.5s, background-color 0.3s;
 }
 .main-page .banner-1 {
-  background: url("/dist/img/banners/banner-1.webp") center/cover no-repeat;
+  background: url("/gmng/img/banners/banner-1.webp") center/cover no-repeat;
 }
 @media (max-width: 860px) {
   .main-page .banner-1 {
-    background: url("/dist/img/banners/banner-1-mob.webp") center/cover no-repeat;
+    background: url("/gmng/img/banners/banner-1-mob.webp") center/cover no-repeat;
   }
 }
 .main-page .banner-2 {
-  background: url("/dist/img/banners/banner-2.webp") center/cover no-repeat;
+  background: url("/gmng/img/banners/banner-2.webp") center/cover no-repeat;
 }
 @media (max-width: 860px) {
   .main-page .banner-2 {
-    background: url("/dist/img/banners/banner-2-mob.webp") center/cover no-repeat;
+    background: url("/gmng/img/banners/banner-2-mob.webp") center/cover no-repeat;
   }
 }
 .main-page .banner-3 {
-  background: url("/dist/img/banners/banner-3.webp") center/cover no-repeat;
+  background: url("/gmng/img/banners/banner-3.webp") center/cover no-repeat;
 }
 @media (max-width: 860px) {
   .main-page .banner-3 {
-    background: url("/dist/img/banners/banner-3-mob.webp") center/cover no-repeat;
+    background: url("/gmng/img/banners/banner-3-mob.webp") center/cover no-repeat;
   }
 }
 .main-page .about {
@@ -1303,13 +1303,13 @@ input[type=search]::-webkit-search-cancel-button {
 }
 .main-page .utilities {
   padding: 90px 0 90px;
-  background: url("/dist/img/background-1.webp") center/cover no-repeat;
+  background: url("/gmng/img/background-1.webp") center/cover no-repeat;
   text-align: center;
 }
 @media (max-width: 860px) {
   .main-page .utilities {
     padding: 40px 0 66px;
-    background-image: url("/dist/img/background-1-mob.webp");
+    background-image: url("/gmng/img/background-1-mob.webp");
   }
 }
 .main-page .utilities__title {
@@ -1407,7 +1407,7 @@ input[type=search]::-webkit-search-cancel-button {
 }
 .main-page .choice {
   padding: 90px 0 90px;
-  background: url("/dist/img/background-2.webp") center/cover no-repeat, #000000;
+  background: url("/gmng/img/background-2.webp") center/cover no-repeat, #000000;
   color: #ffffff;
   min-height: 100vh;
   display: -webkit-box;
@@ -1424,7 +1424,7 @@ input[type=search]::-webkit-search-cancel-button {
 }
 @media (max-width: 480px) {
   .main-page .choice {
-    background-image: url("/dist/img/background-2-mob.webp");
+    background-image: url("/gmng/img/background-2-mob.webp");
   }
 }
 .main-page .choice__container {
@@ -1444,7 +1444,7 @@ input[type=search]::-webkit-search-cancel-button {
 .about-page .top {
   margin: -98px auto 0;
   padding: 260px 0 0;
-  background: url("/dist/img/background-3.webp") center/cover no-repeat;
+  background: url("/gmng/img/background-3.webp") center/cover no-repeat;
   overflow: hidden;
 }
 @media (max-width: 860px) {
@@ -1529,7 +1529,7 @@ input[type=search]::-webkit-search-cancel-button {
 }
 .about-page .value {
   padding: 290px 0;
-  background: url("/dist/img/background-4.webp") 85%/cover no-repeat;
+  background: url("/gmng/img/background-4.webp") 85%/cover no-repeat;
 }
 @media (max-width: 1200px) {
   .about-page .value {
@@ -1711,7 +1711,7 @@ input[type=search]::-webkit-search-cancel-button {
 }
 
 .utilities-page .utilities {
-  background: url("/dist/img/background-5.webp") center/cover no-repeat;
+  background: url("/gmng/img/background-5.webp") center/cover no-repeat;
   padding: 160px 0 298px;
   margin: -98px 0 0;
 }
@@ -2122,7 +2122,7 @@ input[type=search]::-webkit-search-cancel-button {
 }
 
 .not-found-page .not-found {
-  background: url("/dist/img/background-6.jpg") center/cover no-repeat;
+  background: url("/gmng/img/background-6.jpg") center/cover no-repeat;
   min-height: calc(100vh + 98px);
   margin: -98px 0 0;
   padding: 243px 0 160px;
