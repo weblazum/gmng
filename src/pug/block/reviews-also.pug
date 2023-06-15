@@ -8,6 +8,8 @@ section.also
 				else
 					li.also__item(class= element.group)
 						a.also__link(href= element.link) 
-							.also__image
-								img(src= element.image, alt= element.title)
-							span= element.title
+							picture.also__image
+								source(type='image/webp' srcset= element.image + '.webp')
+								source(type='image/jpg' srcset= element.image + '.jpg')
+								img(src= element.image + '.jpg', alt= element.title)
+							span.also__name= element.title

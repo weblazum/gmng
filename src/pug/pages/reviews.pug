@@ -23,7 +23,9 @@ block content
 						each element in reviewsList
 							li.reviews__item.grid-item(class= element.group)
 								a.reviews__link(href= element.link) 
-									.reviews__image
-										img(src= element.image, alt= element.title)
-									span= element.title
+									picture.reviews__image
+										source(type='image/webp' srcset= element.image + '.webp')
+										source(type='image/jpg' srcset= element.image + '.jpg')
+										img(src= element.image + '.jpg', alt= element.title)
+									span.reviews__name= element.title
 

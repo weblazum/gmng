@@ -77,6 +77,9 @@
 .group__list.group__list_var3 {
 	.group__link:hover img {
 		transform: scale(1.2);
+		@include media(phone-bg) {
+			transform: none;
+		}
 	}
 	.group__link:hover span,
 	.group__link:focus span {
@@ -166,9 +169,9 @@
 	@include font(22px, 28px, 500);
 }
 .reviews__image {
+	display: block;
 	position: relative;
 	min-height: 220px;
-	margin: 0 0 20px;
 }
 .reviews__image img {
 	position: absolute;
@@ -177,6 +180,11 @@
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
+}
+
+.reviews__name {
+	display: block;
+	padding: 20px 0 0;
 }
 
 #toTop {

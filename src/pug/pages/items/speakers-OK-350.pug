@@ -53,11 +53,11 @@ block content
 										ul.gallery__list.swiper-wrapper
 											- for(let i = 0; i < galleryItemsCount; i++)
 												li.gallery__item.swiper-slide
-													a.gallery__link(href='/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.jpg' data-fancybox='items-gallery') 
+													a.gallery__link(href='/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.jpg' data-fancybox='items-gallery') 
 														picture.gallery__image
-															source(type='image/webp' srcset= '/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.webp')
-															source(type='image/jpeg' srcset= '/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.jpg')
-															img(src='/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.jpg', alt= pageTitle + '_' + (i + 1))
+															source(type='image/webp' srcset= '/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.webp')
+															source(type='image/jpeg' srcset= '/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.jpg')
+															img(src='/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.jpg', alt= pageTitle + '_' + (i + 1))
 									.swiper-pagination.gallery-pagination
 							if galleryItemsCount > 1
 								.gallery__container
@@ -66,9 +66,9 @@ block content
 												- for(let i = 0; i < galleryItemsCount; i++)
 													li.gallery__item.swiper-slide
 														picture.gallery__image
-															source(type='image/webp' srcset= '/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.webp')
-															source(type='image/jpeg' srcset= '/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.jpg')
-															img(src='/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '_m' + '.jpg', alt= pageTitle + '_' + (i + 1))
+															source(type='image/webp' srcset= '/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.webp')
+															source(type='image/jpeg' srcset= '/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.jpg')
+															img(src='/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.jpg', alt= pageTitle + '_' + (i + 1))
 									.gallery__buttons
 										.gallery-button-prev.swiper-button-prev
 										.gallery-button-next.swiper-button-next
@@ -146,9 +146,11 @@ block content
 										if element.id === itemID
 											li.reviews__item(class= element.group)
 												a.reviews__link(href= element.link) 
-													.reviews__image
-														img(src= element.image, alt= element.title)
-													span= element.title
+													picture.reviews__image
+														source(type='image/webp' srcset= element.image + '.webp')
+														source(type='image/jpg' srcset= element.image + '.jpg')
+														img(src= element.image + '.jpg', alt= element.title)
+													span.reviews__name= element.title
 			section.products 
 				.products__container.container
 					h2.products__title.h3 Смотрите также

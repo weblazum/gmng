@@ -14,38 +14,41 @@
 		margin: 0 0 40px;
 		flex-wrap: wrap;
 	}
-	.reviews__list {
-		max-width: calc($frame-width-base + 24px);
-		margin: 0 -12px;
-		overflow-y: hidden;
-	}
-	.reviews__item {
-		width: calc(33.333% - 24px);
-		margin: 0 12px 60px 12px;
+	// .reviews__list {
+	// 	max-width: calc($frame-width-base + 24px);
+	// 	margin: 0 -12px;
+	// 	overflow-y: hidden;
+	// }
+	// .reviews__item {
+	// 	width: calc(33.333% - 24px);
+	// 	margin: 0 12px 60px 12px;
 
-		@include media(tablet) {
-			width: calc(50% - 24px);
-		}
-		@include media(phone-md) {
-			width: calc(100% - 24px);
-		}
-	}
-	.reviews__link {
-		@include font(22px, 28px, 500);
-	}
-	.reviews__image {
-		position: relative;
-		min-height: 220px;
-		margin: 0 0 20px;
-	}
-	.reviews__image img {
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 100%;
-		width: 100%;
-		object-fit: cover;
-	}
+	// 	@include media(tablet) {
+	// 		width: calc(50% - 24px);
+	// 	}
+	// 	@include media(phone-md) {
+	// 		width: calc(100% - 24px);
+	// 	}
+	// }
+	// .reviews__link {
+	// 	@include font(22px, 28px, 500);
+	// }
+	// .reviews__image {
+	// 	position: relative;
+	// 	min-height: 220px;
+	// }
+	// .reviews__image img {
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// 	height: 100%;
+	// 	width: 100%;
+	// 	object-fit: cover;
+	// }
+	// .reviews__name {
+	// 	display: block;
+	// 	padding: 20px 0 0;
+	// }
 }
 
 .reviews-item-page {
@@ -71,14 +74,15 @@
 			gap: 40px;
 		}
 		@include media(phone-bg) {
-			padding: 40px 0 0;
+			padding: 20px 0 0;
 		}
 	}
 	.review__title {
 		margin: 0 0 40px;
 	}
 	.review__content {
-		max-width: 524px;
+		max-width: 492px;
+		width: 100%;
 		@include media(tablet) {
 			max-width: 100%;
 		}
@@ -94,21 +98,23 @@
 		}
 	}
 	.review__user-content a {
-		color: $color-dark-cyan;
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 	.review__image {
-		max-width: 614px;
-		width: 100%;
+		max-width: 492px;
 		text-align: center;
 		margin: 0 auto;
 	}
-	.review__image picture {
+	.review__image picture,
+	.review__image img {
 		display: block;
 		width: 100%;
-		max-width: 614px;
-	}
-	.review__image img {
 		max-height: 482px;
+		@include media(tablet) {
+			max-height: 342px;
+		}
 	}
 	.also__title {
 		margin: 0 0 40px;
@@ -133,6 +139,7 @@
 		}
 	}
 	.also__image {
+		display: block;
 		height: 234px;
 		overflow: hidden;
 		position: relative;

@@ -64,6 +64,9 @@
 		align-items: center;
 		justify-content: center;
 		padding: 40px 10px 30px;
+		@include media(phone-bg) {
+			padding: 30px 10px 20px;
+		}
 	}
 	.products__image img {
 		width: auto;
@@ -328,14 +331,18 @@
 	.gallery__list {
 		display: flex;
 		@include media(phone-bg) {
-			margin: 0 0 20px;
+			// margin: 0 0 20px;
 		}
 	}
-	.gallery__link picture {
+	.gallery__link .gallery__image {
 		height: 100%;
 		padding: 4px 24px;
+		@include media(phone-bg) {
+			max-height: 364px;
+			padding: 4px;
+		}
 	}
-	.gallery__item picture {
+	.gallery__item .gallery__image {
 		display: flex;
 		align-items: center;
 		height: 100%;
