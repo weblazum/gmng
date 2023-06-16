@@ -2,7 +2,7 @@
 	.top {
 		margin: -98px auto 0;
 		padding: 260px 0 0;
-		background: url("/dist/img/background-3.webp") center / cover no-repeat;
+		background: url("/gmng/img/background-3.webp") center / cover no-repeat;
 		overflow: hidden;
 		@include media(phone-bg) {
 			padding: 150px 0 0;
@@ -61,7 +61,7 @@
 	}
 	.value {
 		padding: 290px 0;
-		background: url("/dist/img/background-4.webp") 85% / cover no-repeat;
+		background: url("/gmng/img/background-4.webp") 85% / cover no-repeat;
 		@include media(laptop-sm) {
 			background-position: center;
 		}

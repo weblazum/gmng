@@ -64,21 +64,21 @@
 		}
 	}
 	.banner-1 {
-		background: url("/dist/img/banners/banner-1.webp") center / cover no-repeat;
+		background: url("/gmng/img/banners/banner-1.webp") center / cover no-repeat;
 		@include media(phone-bg) {
-			background: url("/dist/img/banners/banner-1-mob.webp") center / cover no-repeat;
+			background: url("/gmng/img/banners/banner-1-mob.webp") center / cover no-repeat;
 		}
 	}
 	.banner-2 {
-		background: url("/dist/img/banners/banner-2.webp") center / cover no-repeat;
+		background: url("/gmng/img/banners/banner-2.webp") center / cover no-repeat;
 		@include media(phone-bg) {
-			background: url("/dist/img/banners/banner-2-mob.webp") center / cover no-repeat;
+			background: url("/gmng/img/banners/banner-2-mob.webp") center / cover no-repeat;
 		}
 	}
 	.banner-3 {
-		background: url("/dist/img/banners/banner-3.webp") center / cover no-repeat;
+		background: url("/gmng/img/banners/banner-3.webp") center / cover no-repeat;
 		@include media(phone-bg) {
-			background: url("/dist/img/banners/banner-3-mob.webp") center / cover no-repeat;
+			background: url("/gmng/img/banners/banner-3-mob.webp") center / cover no-repeat;
 		}
 	}
 	.about {
@@ -145,11 +145,11 @@
 	}
 	.utilities {
 		padding: 90px 0 90px;
-		background: url("/dist/img/background-1.webp") center / cover no-repeat;
+		background: url("/gmng/img/background-1.webp") center / cover no-repeat;
 		text-align: center;
 		@include media(phone-bg) {
 			padding: 40px 0 66px;
-			background-image: url("/dist/img/background-1-mob.webp");
+			background-image: url("/gmng/img/background-1-mob.webp");
 		}
 		@include media(phone-sm) {
 		}
@@ -221,7 +221,7 @@
 	}
 	.choice {
 		padding: 90px 0 90px;
-		background: url("/dist/img/background-2.webp") center / cover no-repeat, $color-black;
+		background: url("/gmng/img/background-2.webp") center / cover no-repeat, $color-black;
 		color: $color-white;
 		min-height: 100vh;
 		display: flex;
@@ -230,7 +230,7 @@
 			padding: 70px 0 318px;
 		}
 		@include media(phone-sm) {
-			background-image: url("/dist/img/background-2-mob.webp");
+			background-image: url("/gmng/img/background-2-mob.webp");
 		}
 		&__container {
 			width: 100%;
