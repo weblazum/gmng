@@ -60,7 +60,7 @@ function getYaMap() {
 		balloonContentFooter: '+7 (495) 981 84 84<br><a href="https://merlion.com">merlion.com</a>'
 	}, {
 		iconLayout: 'default#image',
-		iconImageHref: 'img/placemark.svg',
+		iconImageHref: '/dist/img/placemark.svg',
 		iconImageSize: [45, 45],
 		iconImageOffset: [-19, -24]
 	});

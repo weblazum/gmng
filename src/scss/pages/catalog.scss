@@ -364,6 +364,8 @@
 	.swiper-pagination-bullet {
 		background: transparent;
 		border: 1px solid $color-black;
+		height: 10px;
+		width: 10px;
 	}
 	.swiper-pagination-bullet-active {
 		background: $color-dark-cyan;

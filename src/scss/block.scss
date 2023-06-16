@@ -141,11 +141,14 @@
 .swiper-button-prev:after,
 .swiper-button-next:after {
 	content: "";
-	background: url("/gmng/img/slider-arrow.svg") no-repeat;
-	width: 8px;
-	height: 14px;
 }
-.swiper-button-prev:after {
+.swiper-button-prev svg,
+.swiper-button-next svg {
+	width: 10px;
+	height: 16px;
+}
+
+.swiper-button-prev svg {
 	transform: rotate(180deg);
 }
 
