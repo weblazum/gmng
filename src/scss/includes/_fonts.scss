@@ -17,6 +17,6 @@
 	line-height: math.div($header-line-height, $header-font-size);
 }
 
-@include font-face("Futura New", "../fonts/futuranewbook", 400);
-@include font-face("Futura New", "../fonts/futuranewmedium", 500);
-@include font-face("Futura New", "../fonts/futuranewmedium", 600);
+@include font-face("Futura New", "/dist/fonts/futuranewbook", 400);
+@include font-face("Futura New", "/dist/fonts/futuranewmedium", 500);
+@include font-face("Futura New", "/dist/fonts/futuranewmedium", 600);
