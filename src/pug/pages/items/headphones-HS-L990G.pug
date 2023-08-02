@@ -13,50 +13,7 @@ block content
 		include ../../block/group-list
 		include ../../includes/items-list
 		include ../../includes/reviews-list
-		-
-			let specMain = {
-				'Тип, акустический': 'закрытые',
-				'Тип конструкции': 'мониторные',
-				'Тип соединения гарнитуры': 'беспроводные радио',
-				'Тип гарнитуры': 'стерео',
-				'Тип регулятора громкости': 'на наушниках',
-				'Максимальная мощность': '32 мВт',
-				'Чувствительность микрофона': '42 дБ',
-				'Чувствительность динамика': '102 дБ',
-				'Частотный диапазон': '20Гц-20КГц',
-				'Регулятор громкости': '',
-				'Импеданс': '32 Ом',
-			};
-		-
-			let specTechnical = {
-				'Режим объемного звучания': 'Стерео 2.0',
-				'Верхняя граница диапазона динамика': '20 КГц',
-				'Шумоподавление микрофона': '',
-				'Диаметр головок излучателей': '40 мм',
-				'Тип коннектора': 'прямой',
-				'Переходник на 3.5 мм': '',
-				'Подключение кабеля': 'одностороннее',
-			};
-		-
-			let specPower = {
-				'Тип элементов питания': 'встроенный аккумулятор',
-			};
-		-
-			let specFrame = {
-				'Крепление': 'оголовье',
-				'Крепление микрофона': 'съемный гибкий',
-				'Цвет': 'белый',
-				'Длина шнура': '1.5 м',
-				'Вес (без шнура)': '330 г',
-				'Материал магнита': 'NdFeB',
-				'Габариты упаковки (ед) ДхШхВ': '0.26x0.07x0.27 м',
-			};
-		-
-			let specFeatures = {
-				'Съемный микрофон': '',
-				'Для геймеров': '',
-				'Дополнительно в комплекте': 'Провод для зарядки USB-A - USB-C, провод для подключения 3,5 мм',
-			};
+		include ../../includes/specs-list
 		main.main
 			section.item
 				.container.item__container
@@ -129,41 +86,15 @@ block content
 					each element in itemsList
 						if element.id === itemID & element.features === true 
 							.features__table.tab-block#tab-1
-								.features__block
-									.features__title.h4 Основные характеристики
-									.features__specs
-										each value, property in specMain
-											.features__inner
-												.features__property= property
-												.features__value= value
-								.features__block
-									.features__title.h4 Технические характеристики
-									.features__specs
-										each value, property in specTechnical
-											.features__inner
-												.features__property= property
-												.features__value= value
-								.features__block
-									.features__title.h4 Питание
-									.features__specs
-										each value, property in specPower
-											.features__inner
-												.features__property= property
-												.features__value= value
-								.features__block
-									.features__title.h4 Корпус
-									.features__specs
-										each value, property in specFrame
-											.features__inner
-												.features__property= property
-												.features__value= value
-								.features__block
-									.features__title.h4 Особенности
-									.features__specs
-										each value, property in specFeatures
-											.features__inner
-												.features__property= property
-												.features__value= value
+								-let listID = specsList[itemID]
+								each value, key in listID
+									.features__block
+										.features__title.h4= key
+										.features__specs
+											each value, property in listID[key]
+												.features__inner
+													.features__property= property
+													.features__value= value
 						if element.id === itemID & element.reviews === true 
 							.features__reviews.reviews.tab-block#tab-2
 								ul.reviews__list

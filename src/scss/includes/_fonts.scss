@@ -5,9 +5,13 @@
 		font-style: $style;
 		font-display: swap;
 		src: url("#{$file-path}.eot");
-		src: local("#{$font-family}"), url("#{$file-path}.eot?#iefix") format("embedded-opentype"),
-			url("#{$file-path}.woff2") format("woff2"), url("#{$file-path}.woff") format("woff"),
-			url("#{$file-path}.ttf") format("truetype"), url("#{$file-path}.svg") format("svg");
+		src:
+			local("#{$font-family}"),
+			url("#{$file-path}.eot?#iefix") format("embedded-opentype"),
+			url("#{$file-path}.woff2") format("woff2"),
+			url("#{$file-path}.woff") format("woff"),
+			url("#{$file-path}.ttf") format("truetype"),
+			url("#{$file-path}.svg") format("svg");
 	}
 }
 
@@ -17,6 +21,6 @@
 	line-height: math.div($header-line-height, $header-font-size);
 }
 
-@include font-face("Futura New", "/dist/fonts/futuranewbook", 400);
-@include font-face("Futura New", "/dist/fonts/futuranewmedium", 500);
-@include font-face("Futura New", "/dist/fonts/futuranewmedium", 600);
+@include font-face("Futura New", "/gmng/fonts/futuranewbook", 400);
+@include font-face("Futura New", "/gmng/fonts/futuranewmedium", 500);
+@include font-face("Futura New", "/gmng/fonts/futuranewmedium", 600);

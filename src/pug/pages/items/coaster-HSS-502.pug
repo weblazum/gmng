@@ -13,6 +13,7 @@ block content
 		include ../../block/group-list
 		include ../../includes/items-list
 		include ../../includes/reviews-list
+		include ../../includes/specs-list
 		main.main
 			section.item
 				.container.item__container
@@ -85,6 +86,15 @@ block content
 					each element in itemsList
 						if element.id === itemID & element.features === true 
 							.features__table.tab-block#tab-1
+								-let listID = specsList[itemID]
+								each value, key in listID
+									.features__block
+										.features__title.h4= key
+										.features__specs
+											each value, property in listID[key]
+												.features__inner
+													.features__property= property
+													.features__value= value
 						if element.id === itemID & element.reviews === true 
 							.features__reviews.reviews.tab-block#tab-2
 								ul.reviews__list
@@ -97,7 +107,7 @@ block content
 														source(type='image/jpg' srcset= element.image + '.jpg')
 														img(src= element.image + '.jpg', alt= element.title)
 													span.reviews__name= element.title
-			section.products.products-also
+			section.products 
 				.products__container.container
 					h2.products__title.h3 Смотрите также
 					.products__content

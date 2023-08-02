@@ -13,47 +13,7 @@ block content
 		include ../../block/group-list
 		include ../../includes/items-list
 		include ../../includes/reviews-list
-		-
-			let specMain = {
-				'Технология': 'оптическая',
-				'Разрешение сенсора, макс.': '10000 dpi',
-				'Тип соединения мыши': 'беспроводная',
-				'Интерфейс подключения': 'USB',
-				'Для геймеров': '',
-				'Для ноутбуков': '',
-				'Количество кнопок': '7',
-				'Колесо прокрутки': '',
-				'Длина провода': '1.8 м',
-				'Радиус действия мыши': '10 м',
-				'Подключение по USB': '',
-				'Поддержка разрешений': '100/1600/3200/5000/10000 dpi',
-				'Возможность работы на покрытиях': 'на любой поверхности',
-				'Тип поставки': 'Ret',
-			};
-		-
-			let specPower = {
-				'Питание от': 'Li-Ion аккумулятор',
-				'Индикация заряда батарей': '',
-			};
-		-
-			let specEquipment = {
-				'Комплект поставки': 'Игровая беспроводная компьютерная мышь 980GMW',
-			};
-		-
-			let specFrame = {
-				'Дизайн': 'для правой руки',
-				'Специальное покрытие корпуса': 'soft touch',
-				'Цвет оформления': 'черный',
-				'Размеры мыши': '72.66x129.97x43.29мм',
-				'Вес (мыши)': '120 грамм',
-			};
-		-
-			let specFeatures = {
-				'Количество программируемых клавиш': '7',
-				'Максимальная скорость': '2.54 метр/сек',
-				'Изменение чувствительности сенсора кнопкой': '',
-				'Максимальное ускорение': '20 G',
-			};
+		include ../../includes/specs-list
 		main.main
 			section.item
 				.container.item__container
@@ -87,7 +47,6 @@ block content
 											include ../../../img/slider-arrow.svg
 										button.gallery-button-next.swiper-button-next(aria-label="Следующий")
 											include ../../../img/slider-arrow.svg
-
 						.item__content
 							span.item__id id #{itemID}
 							h1.item__title.h4= pageTitle
@@ -127,41 +86,15 @@ block content
 					each element in itemsList
 						if element.id === itemID & element.features === true 
 							.features__table.tab-block#tab-1
-								.features__block
-									.features__title.h4 Основные характеристики
-									.features__specs
-										each value, property in specMain
-											.features__inner
-												.features__property= property
-												.features__value= value
-								.features__block
-									.features__title.h4 Питание
-									.features__specs
-										each value, property in specPower
-											.features__inner
-												.features__property= property
-												.features__value= value
-								.features__block
-									.features__title.h4 Комплектация
-									.features__specs
-										each value, property in specEquipment
-											.features__inner
-												.features__property= property
-												.features__value= value
-								.features__block
-									.features__title.h4 Корпус
-									.features__specs
-										each value, property in specFrame
-											.features__inner
-												.features__property= property
-												.features__value= value
-								.features__block
-									.features__title.h4 Особенности
-									.features__specs
-										each value, property in specFeatures
-											.features__inner
-												.features__property= property
-												.features__value= value
+								-let listID = specsList[itemID]
+								each value, key in listID
+									.features__block
+										.features__title.h4= key
+										.features__specs
+											each value, property in listID[key]
+												.features__inner
+													.features__property= property
+													.features__value= value
 						if element.id === itemID & element.reviews === true 
 							.features__reviews.reviews.tab-block#tab-2
 								ul.reviews__list

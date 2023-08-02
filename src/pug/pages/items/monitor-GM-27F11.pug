@@ -13,52 +13,7 @@ block content
 		include ../../block/group-list
 		include ../../includes/items-list
 		include ../../includes/reviews-list
-		-
-			let specMain = {
-				'Диагональ экрана': '27" (68.6см)',
-				'Тип матрицы': 'VA',
-				'Соотношение сторон экрана': '16:9',
-				'Разрешение': '2560x1440',
-				'Углы обзора': '178/178',
-				'Время отклика': '1 мс',
-				'Яркость экрана': '300 кд/м2',
-				'Поверхность экрана': 'матовая',
-				'Светодиодная подсветка ЖК-панели': '',
-				'Частота обновления': '165 Гц',
-				'Статическая контрастность к 1': '4000',
-				'Динамическая контрастность к 1': '1000000',
-			};
-		-
-			let specInterface = {
-				'Разъем HDMI': '',
-				'Количество разъемов HDMI': '2',
-				'Версия разъемов HDMI': '2.1',
-				'Разъем Display Port': '',
-				'Количество разъемов DisplayPort': '2 шт',
-				'Выход на наушники': '',
-				'Разъем подключения наушников': '3.5 мм',
-			};
-		-
-			let specPower = {
-				'Тип блока питания': 'внутренний',
-				'Энергопотребление': '45 Вт',
-				'Энергопотребление в режиме ожидания': '0.5 Вт',
-			};
-		-
-			let specFrame = {
-				'Цвет подставки': 'черный',
-				'Цвет рамки': 'черный',
-				'Размеры с подставкой': '616.4x571.6x373.9мм',
-				'Покрытие корпуса': 'матовое',
-				'Вес товара': '6.63 кг',
-				'Вес (без подставки)': '4.79 кг',
-				'Размер крепления VESA': '100х100',
-			};
-		-
-			let specFeatures = {
-				'Поддержка NVIDIA G-Sync': '',
-				'Поддержка AMD FreeSync': '',
-			};
+		include ../../includes/specs-list
 		main.main
 			section.item
 				.container.item__container
@@ -131,41 +86,15 @@ block content
 					each element in itemsList
 						if element.id === itemID & element.features === true 
 							.features__table.tab-block#tab-1
-								.features__block
-									.features__title.h4 Основные характеристики
-									.features__specs
-										each value, property in specMain
-											.features__inner
-												.features__property= property
-												.features__value= value
-								.features__block
-									.features__title.h4 Разъемы и интерфейсы
-									.features__specs
-										each value, property in specInterface
-											.features__inner
-												.features__property= property
-												.features__value= value
-								.features__block
-									.features__title.h4 Питание
-									.features__specs
-										each value, property in specPower
-											.features__inner
-												.features__property= property
-												.features__value= value
-								.features__block
-									.features__title.h4 Корпус
-									.features__specs
-										each value, property in specFrame
-											.features__inner
-												.features__property= property
-												.features__value= value
-								.features__block
-									.features__title.h4 Особенности
-									.features__specs
-										each value, property in specFeatures
-											.features__inner
-												.features__property= property
-												.features__value= value
+								-let listID = specsList[itemID]
+								each value, key in listID
+									.features__block
+										.features__title.h4= key
+										.features__specs
+											each value, property in listID[key]
+												.features__inner
+													.features__property= property
+													.features__value= value
 						if element.id === itemID & element.reviews === true 
 							.features__reviews.reviews.tab-block#tab-2
 								ul.reviews__list

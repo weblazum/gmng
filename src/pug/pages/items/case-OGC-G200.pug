@@ -13,49 +13,7 @@ block content
 		include ../../block/group-list
 		include ../../includes/items-list
 		include ../../includes/reviews-list
-		-
-			let specMain = {
-				'Типоразмер': 'Midi-Tower',
-				'Форм-фактор материнской платы': 'E-ATX',
-				'Размещение HDD': 'поперечное',
-				'Количество слотов расширения': '7',
-				'Отсеки 2,5" внутренние': '2',
-				'Отсеки 3,5" внутренние': '2',
-				'Прозрачная передняя панель': '',
-				'Прозрачная боковая панель': '',
-			};
-		-
-			let specCooling = {
-				'Вентиляторы на передней панели': '3',
-				'Размер фронтальных вентиляторов': '120 мм',
-				'Вентиляторы на задней панели': '1',
-				'Размер тыловых вентиляторов': '120 мм',
-				'Число доп. вентиляторов 120 мм': '2',
-
-			};
-		-
-			let specInterface = {
-				'Фронтальные разъемы USB 2.0': '2',
-				'Фронтальные разъемы USB 3.0': '1',
-				'Фронтальные аудио-разъемы': '',
-			};
-		-
-			let specPower = {
-				'Наличие блока питания': 'Отсутствует',
-				'Расположение БП': 'нижнее',
-				'Питание видеокарты': 'отсутствует',
-			};
-		-
-			let specSizes = {
-
-				'Материал корпуса': 'сталь/стекло',
-				'Толщина стенок корпуса': '0.6 мм',
-				'Максимальная длина видеокарты': '360 мм',
-				'Вес корпуса': '5.94 кг',
-				'Размеры корпуса': '210x465x430мм',
-				'Цвет': 'черный',
-			};
-
+		include ../../includes/specs-list
 		main.main
 			section.item
 				.container.item__container
@@ -68,7 +26,7 @@ block content
 										ul.gallery__list.swiper-wrapper
 											- for(let i = 0; i < galleryItemsCount; i++)
 												li.gallery__item.swiper-slide
-													a.gallery__link(href='/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.jpg' , data-fancybox='items-gallery', aria-label= pageTitle + ' фото ' + (i+1))
+													a.gallery__link(href='/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.jpg' , data-fancybox='items-gallery', aria-label= pageTitle + ' фото ' + (i+1)) 
 														picture.gallery__image
 															source(type='image/webp' srcset= '/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.webp')
 															source(type='image/jpeg' srcset= '/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.jpg')
@@ -84,7 +42,7 @@ block content
 															source(type='image/webp' srcset= '/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.webp')
 															source(type='image/jpeg' srcset= '/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.jpg')
 															img(src='/gmng/img/catalog/items/gallery/' + itemID + '/' + itemID + '_v' + (i + 1) + '.jpg', alt= pageTitle + '_' + (i + 1))
-									.gallery__buttons.swiper-buttons
+									.gallery__buttons
 										button.gallery-button-prev.swiper-button-prev(aria-label="Предыдущий")
 											include ../../../img/slider-arrow.svg
 										button.gallery-button-next.swiper-button-next(aria-label="Следующий")
@@ -103,12 +61,12 @@ block content
 										if element.manualLink != null
 											.downloads__item
 												p.downloads__type.h4 Руководство пользователя
-												a.downloads__link(href= element.manualLink, target="_blank", aria-label="Скачать руководство пользователя")= element.manualSize
+												a.downloads__link(href= element.manualLink, target="_blank", aria-label="Скачать")= element.manualSize
 													include ../../../img/download.svg
 										if element.driverLink != null
 											.downloads__item
 												p.downloads__type.h4 Драйвер
-												a.downloads__link(href= element.driverLink, aria-label="Скачать драйвер")= element.driverSize
+												a.downloads__link(href= element.driverLink, aria-label="Скачать")= element.driverSize
 													include ../../../img/download.svg
 							.item__buy.buy
 								p.buy__title Купить в магазинах
@@ -128,41 +86,15 @@ block content
 					each element in itemsList
 						if element.id === itemID & element.features === true 
 							.features__table.tab-block#tab-1
-								.features__block
-									.features__title.h4 Основные характеристики
-									.features__specs
-										each value, property in specMain
-											.features__inner
-												.features__property= property
-												.features__value= value
-								.features__block
-									.features__title.h4 Охлождение
-									.features__specs
-										each value, property in specCooling
-											.features__inner
-												.features__property= property
-												.features__value= value
-								.features__block
-									.features__title.h4 Разъемы и интерфейсы
-									.features__specs
-										each value, property in specInterface
-											.features__inner
-												.features__property= property
-												.features__value= value
-								.features__block
-									.features__title.h4 Размеры, вес, цвет
-									.features__specs
-										each value, property in specSizes
-											.features__inner
-												.features__property= property
-												.features__value= value
-								.features__block
-									.features__title.h4 Питание
-									.features__specs
-										each value, property in specPower
-											.features__inner
-												.features__property= property
-												.features__value= value
+								-let listID = specsList[itemID]
+								each value, key in listID
+									.features__block
+										.features__title.h4= key
+										.features__specs
+											each value, property in listID[key]
+												.features__inner
+													.features__property= property
+													.features__value= value
 						if element.id === itemID & element.reviews === true 
 							.features__reviews.reviews.tab-block#tab-2
 								ul.reviews__list

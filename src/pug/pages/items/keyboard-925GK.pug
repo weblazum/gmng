@@ -13,39 +13,7 @@ block content
 		include ../../block/group-list
 		include ../../includes/items-list
 		include ../../includes/reviews-list
-		-
-			let specMain = {
-				'Тип': 'Клавиатура',
-				'Мультимедийные дополнительные клавиши': '',
-				'Для геймеров':'',
-				'Длина кабеля':'1.8 м',
-				'Цифровой блок':'',
-				'Глубина клавиатуры':'138 мм',
-				'Механическая':'',
-			};
-		-
-			let specInterface = {
-				'Интерфейс': 'USB',
-			};
-		-
-			let specDimensions = {
-				'Размеры клавиатуры': '450x34x138мм',
-				'Цвет': 'черный',
-				'Вес (клавиатуры)': '1.14 кг',
-				'Материал корпуса': 'пластик/металл',
-				'Цвет корпуса клавиатуры': 'серый',
-				'Цвет клавиш': 'черный',
-				'Цвет английских букв': 'прозрачный',
-				'Цвет русских букв': 'прозрачный',
-			};
-		-
-			let specFeatures = {
-				'Панель Multi Touch': '',
-				'Подсветка клавиш': '',
-				'Защита от попадания жидкостей': '',
-				'Дизайн клавиш': 'квадратные',
-				'Клавиатура с русскими буквами': '',
-			};
+		include ../../includes/specs-list
 		main.main
 			section.item
 				.container.item__container
@@ -79,7 +47,6 @@ block content
 											include ../../../img/slider-arrow.svg
 										button.gallery-button-next.swiper-button-next(aria-label="Следующий")
 											include ../../../img/slider-arrow.svg
-
 						.item__content
 							span.item__id id #{itemID}
 							h1.item__title.h4= pageTitle
@@ -119,34 +86,15 @@ block content
 					each element in itemsList
 						if element.id === itemID & element.features === true 
 							.features__table.tab-block#tab-1
-								.features__block
-									.features__title.h4 Основные характеристики
-									.features__specs
-										each value, property in specMain
-											.features__inner
-												.features__property= property
-												.features__value= value
-								.features__block
-									.features__title.h4 Разъемы, интерфейсы 
-									.features__specs
-										each value, property in specInterface
-											.features__inner
-												.features__property= property
-												.features__value= value
-								.features__block
-									.features__title.h4 Размеры, вес, цвет
-									.features__specs
-										each value, property in specDimensions
-											.features__inner
-												.features__property= property
-												.features__value= value
-								.features__block
-									.features__title.h4 Особенности
-									.features__specs
-										each value, property in specFeatures
-											.features__inner
-												.features__property= property
-												.features__value= value
+								-let listID = specsList[itemID]
+								each value, key in listID
+									.features__block
+										.features__title.h4= key
+										.features__specs
+											each value, property in listID[key]
+												.features__inner
+													.features__property= property
+													.features__value= value
 						if element.id === itemID & element.reviews === true 
 							.features__reviews.reviews.tab-block#tab-2
 								ul.reviews__list
@@ -159,7 +107,7 @@ block content
 														source(type='image/jpg' srcset= element.image + '.jpg')
 														img(src= element.image + '.jpg', alt= element.title)
 													span.reviews__name= element.title
-			section.products.products-also
+			section.products 
 				.products__container.container
 					h2.products__title.h3 Смотрите также
 					.products__content

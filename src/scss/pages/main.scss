@@ -51,14 +51,20 @@
 				background-color: $color-dark-grey;
 				margin: 0 !important;
 				opacity: 1;
-				transition: width 0.5s, height 0.5s, background-color 0.3s;
+				transition:
+					width 0.5s,
+					height 0.5s,
+					background-color 0.3s;
 			}
 			&-active {
 				&:after {
 					display: block;
 					background-color: $color-cyan;
 					width: 80px;
-					transition: width 0.5s, height 0.5s, background-color 0.3s;
+					transition:
+						width 0.5s,
+						height 0.5s,
+						background-color 0.3s;
 				}
 			}
 		}
@@ -221,7 +227,9 @@
 	}
 	.choice {
 		padding: 90px 0 90px;
-		background: url("/gmng/img/background-2.webp") center / cover no-repeat, $color-black;
+		background:
+			url("/gmng/img/background-2.webp") center / cover no-repeat,
+			$color-black;
 		color: $color-white;
 		min-height: 100vh;
 		display: flex;

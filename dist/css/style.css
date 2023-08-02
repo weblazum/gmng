@@ -34,24 +34,24 @@ button {
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url("../fonts/futuranewbook.eot");
-  src: local("Futura New"), url("../fonts/futuranewbook.eot?#iefix") format("embedded-opentype"), url("../fonts/futuranewbook.woff2") format("woff2"), url("../fonts/futuranewbook.woff") format("woff"), url("../fonts/futuranewbook.ttf") format("truetype"), url("../fonts/futuranewbook.svg") format("svg");
+  src: url("/gmng/fonts/futuranewbook.eot");
+  src: local("Futura New"), url("/gmng/fonts/futuranewbook.eot?#iefix") format("embedded-opentype"), url("/gmng/fonts/futuranewbook.woff2") format("woff2"), url("/gmng/fonts/futuranewbook.woff") format("woff"), url("/gmng/fonts/futuranewbook.ttf") format("truetype"), url("/gmng/fonts/futuranewbook.svg") format("svg");
 }
 @font-face {
   font-family: "Futura New";
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-  src: url("../fonts/futuranewmedium.eot");
-  src: local("Futura New"), url("../fonts/futuranewmedium.eot?#iefix") format("embedded-opentype"), url("../fonts/futuranewmedium.woff2") format("woff2"), url("../fonts/futuranewmedium.woff") format("woff"), url("../fonts/futuranewmedium.ttf") format("truetype"), url("../fonts/futuranewmedium.svg") format("svg");
+  src: url("/gmng/fonts/futuranewmedium.eot");
+  src: local("Futura New"), url("/gmng/fonts/futuranewmedium.eot?#iefix") format("embedded-opentype"), url("/gmng/fonts/futuranewmedium.woff2") format("woff2"), url("/gmng/fonts/futuranewmedium.woff") format("woff"), url("/gmng/fonts/futuranewmedium.ttf") format("truetype"), url("/gmng/fonts/futuranewmedium.svg") format("svg");
 }
 @font-face {
   font-family: "Futura New";
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-  src: url("../fonts/futuranewmedium.eot");
-  src: local("Futura New"), url("../fonts/futuranewmedium.eot?#iefix") format("embedded-opentype"), url("../fonts/futuranewmedium.woff2") format("woff2"), url("../fonts/futuranewmedium.woff") format("woff"), url("../fonts/futuranewmedium.ttf") format("truetype"), url("../fonts/futuranewmedium.svg") format("svg");
+  src: url("/gmng/fonts/futuranewmedium.eot");
+  src: local("Futura New"), url("/gmng/fonts/futuranewmedium.eot?#iefix") format("embedded-opentype"), url("/gmng/fonts/futuranewmedium.woff2") format("woff2"), url("/gmng/fonts/futuranewmedium.woff") format("woff"), url("/gmng/fonts/futuranewmedium.ttf") format("truetype"), url("/gmng/fonts/futuranewmedium.svg") format("svg");
 }
 html,
 body {
