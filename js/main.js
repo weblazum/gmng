@@ -189,7 +189,7 @@ let slider = document.querySelector('.swiper');
 let slideItem = document.querySelectorAll('.swiper-slide');
 let sliderNav = document.querySelector('.products-buttons');
 
-let productSection = document.querySelector('.products-also');
+let productSection = document.querySelector('.products');
 let productSlider = document.querySelector('.swiper-products');
 let productSlideItem = document.querySelectorAll('.products__item');
 
